@@ -21,12 +21,12 @@ jobs:
         if [ -f "results.json" ]; then
           echo "✅ Found results.json - deploying site"
           python -c "
-          import json
-          with open('results.json', 'r') as f:
-              data = json.load(f)
-          print(f'Results: {data.get(\"total_results\", 0)} campsites')
-          print(f'Last updated: {data.get(\"last_updated\", \"Unknown\")}')
-          "
+        import json
+        with open('results.json', 'r') as f:
+            data = json.load(f)
+        print(f'Results: {data.get(\"total_results\", 0)} campsites')
+        print(f'Last updated: {data.get(\"last_updated\", \"Unknown\")}')
+        "
         else
           echo "⚠️  No results.json found - creating empty results"
           echo '{"last_updated": "'$(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)'", "total_results": 0, "results": [], "message": "No data available"}' > results.json
