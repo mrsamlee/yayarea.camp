@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bay Area Camping Availability</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        
+        .info {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .results-count {
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .campsite-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .campsite-item {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        
+        .facility-name {
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+        
+        .recreation-area {
+            color: #495057;
+            margin-bottom: 5px;
+        }
+        
+        .details {
+            color: #6c757d;
+            font-size: 13px;
+        }
+        
+        .miles {
+            background: #ffc107;
+            color: #212529;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .dates {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .url {
+            color: #007bff;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        .url:hover {
+            text-decoration: underline;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏕️ YAY AREAAAA CAMPING</h1>
+            <div class="info">
+                Last updated: <span id="lastUpdated">Loading...</span> | 
+                Search: <span id="searchCriteria">Loading...</span>
+            </div>
+        </div>
+        
+        <div id="resultsContainer">
+            <div class="loading">
+                <h3>Searching for available campsites...</h3>
+                <p>This may take a few moments</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load the data from the JSON file
+        async function loadResults() {
+            try {
+                const response = await fetch('results.json');
+                const data = await response.json();
+                
+                // Update last updated time
+                const lastUpdated = new Date(data.last_updated).toLocaleString();
+                document.getElementById('lastUpdated').textContent = lastUpdated;
+                
+                // Update search criteria
+                const searchCriteria = `${data.search_criteria.consecutive_nights} nights, weekends only (Fri-Sat): ${data.search_criteria.weekends_only ? 'Yes' : 'No'}`;
+                document.getElementById('searchCriteria').textContent = searchCriteria;
+                
+                // Display results
+                displayResults(data.results);
+                
+            } catch (error) {
+                console.error('Error loading results:', error);
+                document.getElementById('resultsContainer').innerHTML = `
+                    <div class="error">
+                        <h3>❌ Error Loading Results</h3>
+                        <p>Unable to load campsite data. The search may still be running or there was an error.</p>
+                    </div>
+                `;
+            }
+        }
+        
+        function displayResults(results) {
+            const container = document.getElementById('resultsContainer');
+            
+            if (!results || results.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <h3>😔 No Available Campsites</h3>
+                        <p>No campsites found matching your criteria.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Group results by facility
+            const facilityGroups = {};
+            results.forEach(site => {
+                const facilityId = site.facility_id;
+                if (!facilityGroups[facilityId]) {
+                    facilityGroups[facilityId] = {
+                        site_info: site,
+                        dates: []
+                    };
+                }
+                facilityGroups[facilityId].dates.push(site.booking_date);
+            });
+            
+            // Sort facilities by miles (distance)
+            const sortedFacilities = Object.values(facilityGroups)
+                .sort((a, b) => a.site_info.miles - b.site_info.miles);
+            
+            container.innerHTML = `
+                <div class="results-count">
+                    🎉 Found ${results.length} available campsites across ${sortedFacilities.length} facilities
+                </div>
+                <ul class="campsite-list">
+                    ${sortedFacilities.map(group => createCampsiteItem(group)).join('')}
+                </ul>
+            `;
+        }
+        
+        function createCampsiteItem(group) {
+            const site = group.site_info;
+            const dates = [...new Set(group.dates)].sort();
+            const datesStr = dates.map(date => new Date(date).toLocaleDateString()).join(', ');
+            
+            return `
+                <li class="campsite-item">
+                    <div class="facility-name">${site.facility_name}</div>
+                    <div class="recreation-area">${site.recreation_area}</div>
+                    <div class="details">
+                        <span class="miles">${site.miles} miles</span>
+                        <span class="dates">${datesStr}</span>
+                    </div>
+                    <div class="details">
+                        URL: <a href="${site.booking_url}" target="_blank" class="url">${site.booking_url}</a>
+                    </div>
+                </li>
+            `;
+        }
+        
+        // Load results when page loads
+        loadResults();
+        
+        // Optional: Refresh every hour to match GitHub Actions schedule
+        // setInterval(loadResults, 60 * 60 * 1000);
+    </script>
+</body>
+</html>

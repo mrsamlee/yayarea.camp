@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bay Area Camping Availability</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .last-updated {
+            background: #ecf0f1;
+            padding: 15px 30px;
+            text-align: center;
+            border-bottom: 1px solid #bdc3c7;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        .search-criteria {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .search-criteria h3 {
+            margin-bottom: 10px;
+            color: #495057;
+        }
+        
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .criteria-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .criteria-label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+        
+        .criteria-value {
+            color: #007bff;
+            font-weight: 500;
+        }
+        
+        .results-section {
+            padding: 30px;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+        }
+        
+        .no-results h2 {
+            margin-bottom: 15px;
+            color: #495057;
+        }
+        
+        .results-count {
+            background: #28a745;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        .campsite-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .campsite-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .campsite-header {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            padding: 20px;
+        }
+        
+        .campsite-name {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .campsite-area {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .campsite-details {
+            padding: 20px;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f8f9fa;
+        }
+        
+        .detail-row:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .detail-value {
+            color: #007bff;
+        }
+        
+        .dates-container {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        
+        .dates-label {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #495057;
+        }
+        
+        .date-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .date-tag {
+            background: #007bff;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .book-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+        
+        .book-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .miles-badge {
+            background: #ffc107;
+            color: #212529;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #007bff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .criteria-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .detail-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .date-tags {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏕️ Bay Area Camping Availability</h1>
+            <p>Real-time campsite availability for weekend getaways</p>
+        </div>
+        
+        <div class="last-updated">
+            Last updated: <span id="lastUpdated">Loading...</span>
+        </div>
+        
+        <div class="search-criteria">
+            <h3>🔍 Search Criteria</h3>
+            <div class="criteria-grid">
+                <div class="criteria-item">
+                    <div class="criteria-label">Date Range</div>
+                    <div class="criteria-value" id="dateRange">Loading...</div>
+                </div>
+                <div class="criteria-item">
+                    <div class="criteria-label">Consecutive Nights</div>
+                    <div class="criteria-value" id="consecutiveNights">Loading...</div>
+                </div>
+                <div class="criteria-item">
+                    <div class="criteria-label">Weekends Only</div>
+                    <div class="criteria-value" id="weekendsOnly">Loading...</div>
+                </div>
+                <div class="criteria-item">
+                    <div class="criteria-label">Total Results</div>
+                    <div class="criteria-value" id="totalResults">Loading...</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="results-section">
+            <div id="resultsContainer">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <h2>Searching for available campsites...</h2>
+                    <p>This may take a few moments</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load the data from the JSON file
+        async function loadResults() {
+            try {
+                const response = await fetch('results.json');
+                const data = await response.json();
+                
+                // Update last updated time
+                const lastUpdated = new Date(data.last_updated).toLocaleString();
+                document.getElementById('lastUpdated').textContent = lastUpdated;
+                
+                // Update search criteria
+                document.getElementById('dateRange').textContent = 
+                    `${data.search_criteria.start_date} to ${data.search_criteria.end_date}`;
+                document.getElementById('consecutiveNights').textContent = 
+                    `${data.search_criteria.consecutive_nights} nights`;
+                document.getElementById('weekendsOnly').textContent = 
+                    data.search_criteria.weekends_only ? 'Yes (Fri-Sat)' : 'No';
+                document.getElementById('totalResults').textContent = 
+                    `${data.total_results} campsites`;
+                
+                // Display results
+                displayResults(data.results);
+                
+            } catch (error) {
+                console.error('Error loading results:', error);
+                document.getElementById('resultsContainer').innerHTML = `
+                    <div class="no-results">
+                        <h2>❌ Error Loading Results</h2>
+                        <p>Unable to load campsite data. The search may still be running or there was an error.</p>
+                        <p>Please refresh the page in a few minutes.</p>
+                    </div>
+                `;
+            }
+        }
+        
+        function displayResults(results) {
+            const container = document.getElementById('resultsContainer');
+            
+            if (!results || results.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <h2>😔 No Available Campsites</h2>
+                        <p>No campsites found matching your criteria.</p>
+                        <p>Try expanding your date range or checking back later!</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Group results by facility
+            const facilityGroups = {};
+            results.forEach(site => {
+                const facilityId = site.facility_id;
+                if (!facilityGroups[facilityId]) {
+                    facilityGroups[facilityId] = {
+                        site_info: site,
+                        dates: []
+                    };
+                }
+                facilityGroups[facilityId].dates.push(site.booking_date);
+            });
+            
+            // Sort facilities by miles (distance)
+            const sortedFacilities = Object.values(facilityGroups)
+                .sort((a, b) => a.site_info.miles - b.site_info.miles);
+            
+            container.innerHTML = `
+                <div class="results-count">
+                    🎉 Found ${results.length} available campsites across ${sortedFacilities.length} facilities
+                </div>
+                ${sortedFacilities.map(group => createCampsiteCard(group)).join('')}
+            `;
+        }
+        
+        function createCampsiteCard(group) {
+            const site = group.site_info;
+            const dates = [...new Set(group.dates)].sort();
+            const datesStr = dates.map(date => new Date(date).toLocaleDateString()).join(', ');
+            
+            return `
+                <div class="campsite-card">
+                    <div class="campsite-header">
+                        <div class="campsite-name">${site.facility_name}</div>
+                        <div class="campsite-area">${site.recreation_area}</div>
+                    </div>
+                    <div class="campsite-details">
+                        <div class="detail-row">
+                            <span class="detail-label">📍 Distance from Bay Area</span>
+                            <span class="miles-badge">${site.miles} miles</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">🏕️ Site Type</span>
+                            <span class="detail-value">${site.campsite_site_name}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">📅 Available Dates</span>
+                            <span class="detail-value">${dates.length} dates found</span>
+                        </div>
+                        <div class="dates-container">
+                            <div class="dates-label">📆 Specific Dates:</div>
+                            <div class="date-tags">
+                                ${dates.map(date => 
+                                    `<span class="date-tag">${new Date(date).toLocaleDateString()}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+                        <a href="${site.booking_url}" target="_blank" class="book-button">
+                            🏕️ Book This Site
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Load results when page loads
+        loadResults();
+        
+        // Refresh every 5 minutes to check for updates
+        setInterval(loadResults, 5 * 60 * 1000);
+    </script>
+</body>
+</html>
