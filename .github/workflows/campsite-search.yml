@@ -1,42 +1,36 @@
-name: Bay Area Campsite Search
+name: Deploy Bay Area Campsite Search Site
 
 on:
-  # Run every hour
-  schedule:
-    - cron: '0 * * * *'
-  
   # Allow manual triggering
   workflow_dispatch:
   
-  # Run on push to main branch (for testing)
+  # Run on push to main branch (Lambda will update results.json)
   push:
     branches: [ main ]
 
 jobs:
-  search-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
-        
-    - name: Install dependencies
+    - name: Check for results.json
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        
-    - name: Test API access from GitHub Actions
-      run: |
-        python test_api.py
-        
-    - name: Run campsite search
-      run: |
-        python -c "from main import run_search_and_save; run_search_and_save()" || echo "Search failed, using existing results.json"
+        if [ -f "results.json" ]; then
+          echo "✅ Found results.json - deploying site"
+          python -c "
+          import json
+          with open('results.json', 'r') as f:
+              data = json.load(f)
+          print(f'Results: {data.get(\"total_results\", 0)} campsites')
+          print(f'Last updated: {data.get(\"last_updated\", \"Unknown\")}')
+          "
+        else
+          echo "⚠️  No results.json found - creating empty results"
+          echo '{"last_updated": "'$(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)'", "total_results": 0, "results": [], "message": "No data available"}' > results.json
+        fi
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3

@@ -1,0 +1,104 @@
+name: Auto Squash Commits (Batched)
+
+on:
+  # Run on push to main branch
+  push:
+    branches: [ main ]
+  
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  squash-commits:
+    runs-on: ubuntu-latest
+    # Only run if there are more than 50 commits (more conservative)
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0  # Fetch full history
+        
+    - name: Count commits and check for squashing
+      id: check-commits
+      run: |
+        # Count commits on main branch
+        COMMIT_COUNT=$(git rev-list --count HEAD)
+        echo "Total commits: $COMMIT_COUNT"
+        echo "count=$COMMIT_COUNT" >> $GITHUB_OUTPUT
+        
+        # Check if we need to squash (more than 50 commits)
+        if [ $COMMIT_COUNT -gt 50 ]; then
+          echo "needs_squash=true" >> $GITHUB_OUTPUT
+          echo "✅ More than 50 commits detected - will squash in batches"
+          
+          # Calculate how many commits to squash (keep last 20, squash the rest)
+          KEEP_COMMITS=20
+          SQUASH_COUNT=$((COMMIT_COUNT - KEEP_COMMITS))
+          echo "squash_count=$SQUASH_COUNT" >> $GITHUB_OUTPUT
+          echo "keep_commits=$KEEP_COMMITS" >> $GITHUB_OUTPUT
+        else
+          echo "needs_squash=false" >> $GITHUB_OUTPUT
+          echo "ℹ️  Only $COMMIT_COUNT commits - no squashing needed"
+        fi
+        
+    - name: Squash commits in batches
+      if: steps.check-commits.outputs.needs_squash == 'true'
+      run: |
+        echo "🔄 Starting batched commit squashing..."
+        
+        # Get the commit hash to keep (20th from HEAD)
+        KEEP_COMMIT=$(git rev-list --max-count=1 --skip=${{ steps.check-commits.outputs.keep_commits }} HEAD)
+        echo "Keeping commits from: $KEEP_COMMIT"
+        
+        # Create a backup branch
+        git checkout -b backup-before-squash-$(date +%Y%m%d-%H%M%S)
+        git checkout main
+        
+        # Get the commit message for the squashed commit
+        SQUASH_MESSAGE="Squashed ${{ steps.check-commits.outputs.squash_count }} commits
+
+        This commit combines ${{ steps.check-commits.outputs.squash_count }} older commits to keep the repository history manageable.
+        Original commit count: ${{ steps.check-commits.outputs.count }}
+        Kept recent commits: ${{ steps.check-commits.outputs.keep_commits }}
+        Squashed on: $(date -u +%Y-%m-%dT%H:%M:%SZ)
+        
+        All functionality remains the same - this is just a history cleanup."
+        
+        # Interactive rebase to squash commits
+        # Reset to the keep commit but preserve changes
+        git reset --soft $KEEP_COMMIT
+        
+        # Create the squashed commit
+        git commit -m "$SQUASH_MESSAGE"
+        
+        # Force push the cleaned history
+        echo "📤 Force pushing cleaned commits..."
+        git push origin main --force
+        
+        echo "✅ Successfully squashed ${{ steps.check-commits.outputs.squash_count }} commits!"
+        echo "📊 Reduced from ${{ steps.check-commits.outputs.count }} to ${{ steps.check-commits.outputs.keep_commits }} commits"
+        
+    - name: Create summary
+      if: steps.check-commits.outputs.needs_squash == 'true'
+      run: |
+        echo "## 🧹 Batched Commit Squashing Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "- **Original commit count:** ${{ steps.check-commits.outputs.count }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Commits squashed:** ${{ steps.check-commits.outputs.squash_count }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Commits kept:** ${{ steps.check-commits.outputs.keep_commits }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **New total:** ${{ steps.check-commits.outputs.keep_commits }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Squashed on:** $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> $GITHUB_STEP_SUMMARY
+        echo "- **Backup branch created:** backup-before-squash-$(date +%Y%m%d-%H%M%S)" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "✅ Repository history has been cleaned up while preserving recent commits!" >> $GITHUB_STEP_SUMMARY
+        
+    - name: No squashing needed
+      if: steps.check-commits.outputs.needs_squash == 'false'
+      run: |
+        echo "## ℹ️ No Squashing Needed" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "Current commit count: ${{ steps.check-commits.outputs.count }}" >> $GITHUB_STEP_SUMMARY
+        echo "Squashing will trigger when commits exceed 50." >> $GITHUB_STEP_SUMMARY
