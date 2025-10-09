@@ -191,8 +191,17 @@ def lambda_handler(event, context):
             )
             
             # Use timeout wrapper to prevent hanging (1 minute per month)
-            month_results = search_with_timeout(searcher, timeout_seconds=60)
-            month_results = [result for result in month_results if "Hike" not in result.campsite_site_name]
+            try:
+                month_results = search_with_timeout(searcher, timeout_seconds=60)
+                month_results = [result for result in month_results if "Hike" not in result.campsite_site_name]
+            except Exception as e:
+                print(f"  Error during search for {window_start.strftime('%Y-%m')}: {e}")
+                print(f"  Error type: {type(e).__name__}")
+                # Try to get more details about HTTP errors
+                if hasattr(e, 'response'):
+                    print(f"  HTTP Status: {e.response.status_code if hasattr(e.response, 'status_code') else 'Unknown'}")
+                    print(f"  HTTP Response: {e.response.text if hasattr(e.response, 'text') else 'No text'}")
+                month_results = []
             
             if month_results:
                 all_results.extend(month_results)
@@ -315,8 +324,17 @@ def run_search_and_save():
             )
             
             # Use timeout wrapper to prevent hanging (1 minute per month)
-            month_results = search_with_timeout(searcher, timeout_seconds=60)
-            month_results = [result for result in month_results if "Hike" not in result.campsite_site_name]
+            try:
+                month_results = search_with_timeout(searcher, timeout_seconds=60)
+                month_results = [result for result in month_results if "Hike" not in result.campsite_site_name]
+            except Exception as e:
+                print(f"  Error during search for {window_start.strftime('%Y-%m')}: {e}")
+                print(f"  Error type: {type(e).__name__}")
+                # Try to get more details about HTTP errors
+                if hasattr(e, 'response'):
+                    print(f"  HTTP Status: {e.response.status_code if hasattr(e.response, 'status_code') else 'Unknown'}")
+                    print(f"  HTTP Response: {e.response.text if hasattr(e.response, 'text') else 'No text'}")
+                month_results = []
             
             if month_results:
                 all_results.extend(month_results)
@@ -351,10 +369,24 @@ def run_search_and_save():
     except Exception as e:
         print(f"Unexpected error during search: {e}")
         print(f"Error type: {type(e).__name__}")
+        
+        # If we have partial results, save them
         if all_results:
             print(f"\nPartial results found before error ({len(all_results)} sites):")
             save_results_to_json(all_results, miles_lookup, search_criteria)
             display_results(all_results, miles_lookup)
+        else:
+            # No results at all - create a minimal results file to prevent deployment failure
+            print("No results found, creating empty results file...")
+            empty_results = {
+                "last_updated": datetime.datetime.now().isoformat(),
+                "total_results": 0,
+                "search_criteria": search_criteria,
+                "results": [],
+                "error": f"Search failed: {str(e)}"
+            }
+            with open('results.json', 'w') as f:
+                json.dump(empty_results, f, indent=2)
 
 if __name__ == "__main__":
     # Run for local testing (original behavior)

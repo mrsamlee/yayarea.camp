@@ -30,9 +30,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
+    - name: Test API access from GitHub Actions
+      run: |
+        python test_api.py
+        
     - name: Run campsite search
       run: |
-        python -c "from main import run_search_and_save; run_search_and_save()"
+        python -c "from main import run_search_and_save; run_search_and_save()" || echo "Search failed, using existing results.json"
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
