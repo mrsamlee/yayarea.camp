@@ -2,6 +2,7 @@ import datetime
 import signal
 import json
 from dateutil.relativedelta import relativedelta
+from dateutil import tz
 from camply.search import SearchReserveCalifornia
 from camply.containers import SearchWindow
 from campsites_map import get_rec_to_campsites_map
@@ -142,8 +143,13 @@ def save_results_to_json(results, miles_lookup, search_criteria):
     """
     json_results = results_to_json(results, miles_lookup)
     
+    # Get current time in Pacific Time
+    pacific_tz = tz.gettz('US/Pacific')
+    pacific_time = datetime.datetime.now(pacific_tz)
+    
     output_data = {
-        "last_updated": datetime.datetime.now().isoformat(),
+        "last_updated": pacific_time.isoformat(),
+        "last_updated_pst": pacific_time.strftime('%Y-%m-%d %I:%M %p %Z'),
         "total_results": len(results),
         "search_criteria": search_criteria,
         "results": json_results
@@ -152,7 +158,7 @@ def save_results_to_json(results, miles_lookup, search_criteria):
     with open('results.json', 'w') as f:
         json.dump(output_data, f, indent=2)
     
-    print(f"Results saved to results.json ({len(results)} campsites)")
+    print(f"Results saved to results.json ({len(results)} campsites) - {pacific_time.strftime('%Y-%m-%d %I:%M %p %Z')}")
 
 def main():
     """
