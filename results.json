@@ -1,17 +1,13 @@
 {
-  "last_updated": "2025-10-10T02:11:26.423322",
+  "last_updated": "2025-10-10T02:34:29.534586",
   "search_criteria": {
     "nights": 2,
-    "start_date": "2025-10-11",
-    "end_date": "2026-03-11",
     "weekends_only": true,
-    "days_of_week": [
-      "Friday",
-      "Saturday"
-    ]
+    "start_date": "2025-10-11",
+    "end_date": "2026-03-11"
   },
   "total_results": 0,
   "results": [],
   "status": "search_completed",
-  "note": "Camply search encountered read-only file system error. This is a known limitation in Lambda containers. The system is working correctly and will push results to GitHub."
+  "note": "Mock search results - ready for real camply integration"
 }
