@@ -1,0 +1,99 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  schedule:
+    # Run every 30 minutes
+    - cron: '*/30 * * * *'
+  
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run campsite search with redundancy
+      id: search-results
+      run: |
+        echo "Trying standard search first..."
+        python3 main.py && echo "search_success=true" >> $GITHUB_OUTPUT || {
+          echo "Standard search failed (likely 403), trying with browser headers..."
+          python3 search_with_headers.py && echo "search_success=true" >> $GITHUB_OUTPUT || {
+            echo "All search methods failed - keeping existing results"
+            echo "search_success=false" >> $GITHUB_OUTPUT
+          }
+        }
+        
+        # Check if we got actual results (not just empty due to 403)
+        if [ -f "results.json" ]; then
+          TOTAL_RESULTS=$(python3 -c "import json; data=json.load(open('results.json')); print(data.get('total_results', 0))")
+          echo "total_results=$TOTAL_RESULTS" >> $GITHUB_OUTPUT
+          
+          if [ "$TOTAL_RESULTS" -gt 0 ]; then
+            echo "Got $TOTAL_RESULTS results - search successful"
+            echo "has_results=true" >> $GITHUB_OUTPUT
+          else
+            echo "Got 0 results - likely due to blocking, keeping existing data"
+            echo "has_results=false" >> $GITHUB_OUTPUT
+            # Restore the previous results.json if we got empty results
+            git checkout HEAD~1 -- results.json 2>/dev/null || echo "No previous results to restore"
+          fi
+        else
+          echo "No results.json created - search failed completely"
+          echo "has_results=false" >> $GITHUB_OUTPUT
+        fi
+      
+    - name: Check if results changed and are valid
+      id: check-changes
+      run: |
+        if [ "${{ steps.search-results.outputs.search_success }}" == "true" ] && [ "${{ steps.search-results.outputs.has_results }}" == "true" ]; then
+          if git diff --quiet HEAD -- results.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes to results.json"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Results.json has been updated with valid results"
+          fi
+        elif [ "${{ steps.search-results.outputs.search_success }}" == "true" ] && [ "${{ steps.search-results.outputs.has_results }}" == "false" ]; then
+          echo "changed=false" >> $GITHUB_OUTPUT
+          echo "❌ Search completed but returned 0 results (likely 403 blocking) - workflow will fail"
+          echo "This indicates Reserve California is blocking our requests"
+          exit 1
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+          echo "⚠️ Search methods failed completely - keeping existing data, workflow succeeds"
+          echo "This could be temporary network issues or other errors"
+        fi
+        
+    - name: Commit and push changes
+      if: steps.check-changes.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add results.json
+        git commit -m "Auto-update: Campsite search results - $(date -u +'%Y-%m-%d %H:%M UTC') - ${{ steps.search-results.outputs.total_results }} campsites"
+        git push
+        
+    - name: Deploy to Cloudflare Pages
+      if: steps.check-changes.outputs.changed == 'true'
+      uses: cloudflare/pages-action@v1
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        projectName: yayarea-camp
+        directory: .
+        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
