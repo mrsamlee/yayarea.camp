@@ -48,6 +48,13 @@ if [ $? -eq 0 ]; then
     echo "✅ Successfully deployed to GitHub Pages!"
     echo "🌐 Your site will be available at: https://mrsamlee.github.io/yayarea.camp/"
     echo "⏰ It may take a few minutes for the changes to appear"
+    echo ""
+    echo "📋 Next steps:"
+    echo "1. Go to your repository settings on GitHub"
+    echo "2. Navigate to Pages section"
+    echo "3. Set source to 'Deploy from a branch'"
+    echo "4. Select 'main' branch and '/' folder"
+    echo "5. Save the settings"
 else
     echo "❌ Error: Failed to push to GitHub"
     exit 1
