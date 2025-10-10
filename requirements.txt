@@ -1,1 +1,2 @@
-camply
+requests==2.31.0
+camply==0.33.0
