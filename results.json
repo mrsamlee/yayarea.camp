@@ -1,6 +1,12 @@
 {
-  "last_updated": "2025-10-10T01:52:16.690367",
+  "last_updated": "2025-10-10T01:53:42.369532",
   "total_results": 0,
+  "search_criteria": {
+    "start_date": "2025-10-11",
+    "end_date": "2026-03-11",
+    "consecutive_nights": 2,
+    "weekends_only": true
+  },
   "results": [],
-  "error": "[Errno 30] Read-only file system: 'results.json'"
+  "error": "Search failed: [Errno 30] Read-only file system: '/var/lang/lib/python3.11/site-packages/camply/providers/usedirect/ReserveCalifornia'"
 }
