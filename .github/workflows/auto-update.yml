@@ -26,8 +26,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
-    - name: Run campsite search
-      run: python3 main.py
+    - name: Run campsite search with browser headers
+      run: python3 search_with_headers.py
       
     - name: Check if results changed
       id: check-changes
