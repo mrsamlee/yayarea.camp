@@ -2,8 +2,8 @@ name: Auto-Update Campsite Results
 
 on:
   schedule:
-    # Run every hour at minute 0
-    - cron: '0 * * * *'
+    # Run every 30 minutes
+    - cron: '*/30 * * * *'
   
   # Allow manual triggering
   workflow_dispatch:
@@ -26,18 +26,102 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
-    - name: Run campsite search
-      run: python3 main.py
+    - name: Run campsite search with redundancy
+      id: search-results
+      run: |
+        # Function to try a script multiple times
+        try_script() {
+          local script_name=$1
+          local max_attempts=3
+          local attempt=1
+          
+          while [ $attempt -le $max_attempts ]; do
+            echo "Attempt $attempt/$max_attempts: Running $script_name..."
+            
+            if python3 $script_name; then
+              if [ -f "results.json" ]; then
+                local results=$(python3 -c "import json; data=json.load(open('results.json')); print(data.get('total_results', 0))")
+                echo "$script_name got $results results on attempt $attempt"
+                
+                if [ "$results" -gt 0 ]; then
+                  echo "✅ $script_name succeeded with $results results"
+                  return 0
+                else
+                  echo "⚠️ $script_name completed but got 0 results"
+                fi
+              else
+                echo "❌ $script_name failed - no results.json created"
+              fi
+            else
+              echo "❌ $script_name failed with exit code $?"
+            fi
+            
+            if [ $attempt -lt $max_attempts ]; then
+              echo "Waiting 5 seconds before retry..."
+              sleep 5
+            fi
+            
+            attempt=$((attempt + 1))
+          done
+          
+          echo "❌ $script_name failed after $max_attempts attempts"
+          return 1
+        }
+        
+        # Try standard search first
+        echo "=== Trying standard search (main.py) ==="
+        if try_script "main.py"; then
+          TOTAL_RESULTS=$(python3 -c "import json; data=json.load(open('results.json')); print(data.get('total_results', 0))")
+          echo "search_success=true" >> $GITHUB_OUTPUT
+          echo "has_results=true" >> $GITHUB_OUTPUT
+          echo "✅ Standard search succeeded with $TOTAL_RESULTS results"
+        else
+          echo "Standard search failed, trying with browser headers..."
+          
+          # Try browser headers search
+          echo "=== Trying browser headers search (search_with_headers.py) ==="
+          if try_script "search_with_headers.py"; then
+            TOTAL_RESULTS=$(python3 -c "import json; data=json.load(open('results.json')); print(data.get('total_results', 0))")
+            echo "search_success=true" >> $GITHUB_OUTPUT
+            echo "has_results=true" >> $GITHUB_OUTPUT
+            echo "✅ Browser headers search succeeded with $TOTAL_RESULTS results"
+          else
+            echo "❌ Both search methods failed after multiple attempts"
+            echo "search_success=false" >> $GITHUB_OUTPUT
+            echo "has_results=false" >> $GITHUB_OUTPUT
+          fi
+        fi
+        
+        # Set total_results output for the final check
+        if [ -f "results.json" ]; then
+          TOTAL_RESULTS=$(python3 -c "import json; data=json.load(open('results.json')); print(data.get('total_results', 0))")
+          echo "total_results=$TOTAL_RESULTS" >> $GITHUB_OUTPUT
+        else
+          echo "total_results=0" >> $GITHUB_OUTPUT
+        fi
       
-    - name: Check if results changed
+    - name: Check if results changed and are valid
       id: check-changes
       run: |
-        if git diff --quiet HEAD -- results.json; then
+        if [ "${{ steps.search-results.outputs.search_success }}" == "true" ] && [ "${{ steps.search-results.outputs.has_results }}" == "true" ]; then
+          if git diff --quiet HEAD -- results.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes to results.json"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Results.json has been updated with valid results"
+          fi
+        elif [ "${{ steps.search-results.outputs.search_success }}" == "true" ] && [ "${{ steps.search-results.outputs.has_results }}" == "false" ]; then
           echo "changed=false" >> $GITHUB_OUTPUT
-          echo "No changes to results.json"
+          echo "❌ Search completed but returned 0 results (likely 403 blocking) - workflow will fail"
+          echo "This indicates Reserve California is blocking our requests"
+          exit 1
         else
-          echo "changed=true" >> $GITHUB_OUTPUT
-          echo "Results.json has been updated"
+          echo "changed=false" >> $GITHUB_OUTPUT
+          echo "❌ Search methods failed completely - workflow will fail"
+          echo "Both main.py and search_with_headers.py failed after multiple attempts"
+          echo "This indicates serious issues that need investigation"
+          exit 1
         fi
         
     - name: Commit and push changes
@@ -46,5 +130,5 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add results.json
-        git commit -m "Auto-update: Campsite search results - $(date -u +'%Y-%m-%d %H:%M UTC')"
+        git commit -m "Auto-update: Campsite search results - $(date -u +'%Y-%m-%d %H:%M UTC') - ${{ steps.search-results.outputs.total_results }} campsites"
         git push

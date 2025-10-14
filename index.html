@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bay Area Camping Availability</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <style>
         body {
             font-family: 'Courier New', monospace;
@@ -154,12 +160,28 @@
                 const response = await fetch('results.json');
                 const data = await response.json();
                 
-                // Update last updated time
-                const lastUpdated = new Date(data.last_updated).toLocaleString();
-                document.getElementById('lastUpdated').textContent = lastUpdated;
+                // Update last updated time - show PST formatted time if available, otherwise format the ISO time
+                let lastUpdatedText;
+                if (data.last_updated_pst) {
+                    lastUpdatedText = data.last_updated_pst;
+                } else {
+                    const lastUpdated = new Date(data.last_updated).toLocaleString('en-US', {
+                        timeZone: 'America/Los_Angeles',
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        timeZoneName: 'short'
+                    });
+                    lastUpdatedText = lastUpdated;
+                }
+                document.getElementById('lastUpdated').textContent = lastUpdatedText;
                 
-                // Update search criteria
-                const searchCriteria = `${data.search_criteria.consecutive_nights} nights, Weekends only (Fri-Sat)`;
+                // Update search criteria with date range
+                const startDate = new Date(data.search_criteria.start_date).toLocaleDateString();
+                const endDate = new Date(data.search_criteria.end_date).toLocaleDateString();
+                const searchCriteria = `${data.search_criteria.consecutive_nights} nights, Weekends only (Fri-Sat) | ${startDate} - ${endDate}`;
                 document.getElementById('searchCriteria').textContent = searchCriteria;
                 
                 // Display results
