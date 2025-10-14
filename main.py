@@ -1,6 +1,9 @@
 import datetime
 import signal
 import json
+import sys
+import os
+import argparse
 from dateutil.relativedelta import relativedelta
 from dateutil import tz
 from camply.search import SearchReserveCalifornia
@@ -137,7 +140,7 @@ def display_results(results, miles_lookup):
         
         print(f"{site.recreation_area}, {site.facility_name} URL: {site.booking_url} (Miles: {miles}) (Dates: {dates_str})")
 
-def save_results_to_json(results, miles_lookup, search_criteria):
+def save_results_to_json(results, miles_lookup, search_criteria, batch_name="default", append=False):
     """
     Save search results to results.json in the root folder.
     """
@@ -147,34 +150,72 @@ def save_results_to_json(results, miles_lookup, search_criteria):
     pacific_tz = tz.gettz('US/Pacific')
     pacific_time = datetime.datetime.now(pacific_tz)
     
-    output_data = {
-        "last_updated": pacific_time.isoformat(),
-        "last_updated_pst": pacific_time.strftime('%Y-%m-%d %I:%M %p %Z'),
-        "total_results": len(results),
-        "search_criteria": search_criteria,
-        "results": json_results
-    }
+    if append and os.path.exists('results.json'):
+        # Load existing results and append
+        with open('results.json', 'r') as f:
+            existing_data = json.load(f)
+        
+        # Combine results
+        combined_results = existing_data.get('results', []) + json_results
+        total_results = len(combined_results)
+        
+        # Update with latest batch info
+        output_data = {
+            "last_updated": pacific_time.isoformat(),
+            "last_updated_pst": pacific_time.strftime('%Y-%m-%d %I:%M %p %Z'),
+            "total_results": total_results,
+            "search_criteria": search_criteria,
+            "batch_name": batch_name,
+            "batch_results": len(results),
+            "results": combined_results
+        }
+    else:
+        # Create new results file
+        output_data = {
+            "last_updated": pacific_time.isoformat(),
+            "last_updated_pst": pacific_time.strftime('%Y-%m-%d %I:%M %p %Z'),
+            "total_results": len(results),
+            "search_criteria": search_criteria,
+            "batch_name": batch_name,
+            "batch_results": len(results),
+            "results": json_results
+        }
     
     with open('results.json', 'w') as f:
         json.dump(output_data, f, indent=2)
     
-    print(f"Results saved to results.json ({len(results)} campsites) - {pacific_time.strftime('%Y-%m-%d %I:%M %p %Z')}")
+    print(f"Results saved to results.json ({len(results)} campsites from {batch_name}) - {pacific_time.strftime('%Y-%m-%d %I:%M %p %Z')}")
 
 def main():
     """
     Main function to run the campsite search and save results.
     """
-    print("Starting campsite search...")
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='Search for campsite availability')
+    parser.add_argument('--start-date', type=str, help='Start date in YYYY-MM-DD format')
+    parser.add_argument('--end-date', type=str, help='End date in YYYY-MM-DD format')
+    parser.add_argument('--batch-name', type=str, default='default', help='Name for this batch (for logging)')
+    
+    args = parser.parse_args()
+    
+    print(f"Starting campsite search (Batch: {args.batch_name})...")
     
     camp_data = get_rec_to_campsites_map()
     
     # Build efficient lookup dictionary once
     miles_lookup = build_campground_miles_lookup(camp_data)
 
-    # Search parameters
-    # start_date = datetime.date.today() + relativedelta(days=1)
-    start_date = datetime.date(2026, 2, 1)
-    end_date = start_date + relativedelta(months=5)
+    # Search parameters - use command line args or defaults
+    if args.start_date and args.end_date:
+        start_date = datetime.datetime.strptime(args.start_date, '%Y-%m-%d').date()
+        end_date = datetime.datetime.strptime(args.end_date, '%Y-%m-%d').date()
+        print(f"Using provided dates: {start_date} to {end_date}")
+    else:
+        # Default behavior for backward compatibility
+        start_date = datetime.date.today() + relativedelta(days=1)
+        end_date = start_date + relativedelta(months=6)
+        print(f"Using default dates: {start_date} to {end_date}")
+    
     consecutive_nights = 2  # Look for 2 consecutive nights
     weekends_only = True    # Only search for weekend availability (Friday-Saturday)
 
@@ -236,7 +277,7 @@ def main():
                 print(f"  No sites found for {window_start.strftime('%Y-%m')}")
         
         # Save results to JSON
-        save_results_to_json(all_results, miles_lookup, search_criteria)
+        save_results_to_json(all_results, miles_lookup, search_criteria, args.batch_name, append=False)
         
         # Display results in console
         if all_results:
@@ -248,13 +289,13 @@ def main():
         print(f"Search timed out: {e}")
         if all_results:
             print(f"\nPartial results found before timeout ({len(all_results)} sites):")
-            save_results_to_json(all_results, miles_lookup, search_criteria)
+            save_results_to_json(all_results, miles_lookup, search_criteria, args.batch_name, append=False)
             display_results(all_results, miles_lookup)
     except ConnectionError as e:
         print(f"Network connection error: {e}")
         if all_results:
             print(f"\nPartial results found before connection error ({len(all_results)} sites):")
-            save_results_to_json(all_results, miles_lookup, search_criteria)
+            save_results_to_json(all_results, miles_lookup, search_criteria, args.batch_name, append=False)
             display_results(all_results, miles_lookup)
     except Exception as e:
         print(f"Unexpected error during search: {e}")
@@ -262,12 +303,12 @@ def main():
         
         if all_results:
             print(f"\nPartial results found before error ({len(all_results)} sites):")
-            save_results_to_json(all_results, miles_lookup, search_criteria)
+            save_results_to_json(all_results, miles_lookup, search_criteria, args.batch_name, append=False)
             display_results(all_results, miles_lookup)
         else:
             # No results at all - create empty results file
             print("No results found, creating empty results file...")
-            save_results_to_json([], miles_lookup, search_criteria)
+            save_results_to_json([], miles_lookup, search_criteria, args.batch_name, append=False)
 
 if __name__ == "__main__":
     main()

@@ -68,37 +68,48 @@ jobs:
           return 1
         }
         
-        # Try standard search first
-        echo "=== Trying standard search (main.py) ==="
-        if try_script "main.py"; then
+        # Try two-batch search system
+        echo "=== Trying two-batch search system (run_batches.py) ==="
+        if try_script "run_batches.py"; then
           TOTAL_RESULTS=$(python3 -c "import json; data=json.load(open('results.json')); print(data.get('total_results', 0))")
           echo "search_success=true" >> $GITHUB_OUTPUT
           echo "has_results=true" >> $GITHUB_OUTPUT
-          echo "✅ Standard search succeeded with $TOTAL_RESULTS results"
+          echo "✅ Two-batch search succeeded with $TOTAL_RESULTS results"
         else
-          echo "Standard search failed, trying with browser headers..."
+          echo "Two-batch search failed, trying individual methods..."
           
-          # Try browser headers search
-          echo "=== Trying browser headers search (search_with_headers.py) ==="
-          if try_script "search_with_headers.py"; then
+          # Try standard search as fallback
+          echo "=== Trying standard search (main.py) ==="
+          if try_script "main.py"; then
             TOTAL_RESULTS=$(python3 -c "import json; data=json.load(open('results.json')); print(data.get('total_results', 0))")
             echo "search_success=true" >> $GITHUB_OUTPUT
             echo "has_results=true" >> $GITHUB_OUTPUT
-            echo "✅ Browser headers search succeeded with $TOTAL_RESULTS results"
+            echo "✅ Standard search succeeded with $TOTAL_RESULTS results"
           else
-            echo "Browser headers search failed, trying ultra-stealth method..."
+            echo "Standard search failed, trying with browser headers..."
             
-            # Try ultra-stealth search as last resort
-            echo "=== Trying ultra-stealth search (search_stealth.py) ==="
-            if try_script "search_stealth.py"; then
+            # Try browser headers search
+            echo "=== Trying browser headers search (search_with_headers.py) ==="
+            if try_script "search_with_headers.py"; then
               TOTAL_RESULTS=$(python3 -c "import json; data=json.load(open('results.json')); print(data.get('total_results', 0))")
               echo "search_success=true" >> $GITHUB_OUTPUT
               echo "has_results=true" >> $GITHUB_OUTPUT
-              echo "✅ Ultra-stealth search succeeded with $TOTAL_RESULTS results"
+              echo "✅ Browser headers search succeeded with $TOTAL_RESULTS results"
             else
-              echo "❌ All search methods failed after multiple attempts"
-              echo "search_success=false" >> $GITHUB_OUTPUT
-              echo "has_results=false" >> $GITHUB_OUTPUT
+              echo "Browser headers search failed, trying ultra-stealth method..."
+              
+              # Try ultra-stealth search as last resort
+              echo "=== Trying ultra-stealth search (search_stealth.py) ==="
+              if try_script "search_stealth.py"; then
+                TOTAL_RESULTS=$(python3 -c "import json; data=json.load(open('results.json')); print(data.get('total_results', 0))")
+                echo "search_success=true" >> $GITHUB_OUTPUT
+                echo "has_results=true" >> $GITHUB_OUTPUT
+                echo "✅ Ultra-stealth search succeeded with $TOTAL_RESULTS results"
+              else
+                echo "❌ All search methods failed after multiple attempts"
+                echo "search_success=false" >> $GITHUB_OUTPUT
+                echo "has_results=false" >> $GITHUB_OUTPUT
+              fi
             fi
           fi
         fi
