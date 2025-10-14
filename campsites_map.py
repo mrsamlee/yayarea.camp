@@ -30,9 +30,6 @@ def get_rec_to_campsites_map():
             Campsite("Samuel P. Taylor SP", "49m", 30, "Creekside Loop (sites 1-25)", "https://www.reservecalifornia.com/Web/Default.aspx#!park/705/653", "705", "653"),
             Campsite("Samuel P. Taylor SP", "49m", 30, "Orchard Hill Loop (sites 26-59)", "https://www.reservecalifornia.com/Web/Default.aspx#!park/705/657", "705", "657")
         ],
-        "626": [
-            Campsite("China Camp SP", "36m", 24, "Campground (sites 1-30)", "https://www.reservecalifornia.com/Web/Default.aspx#!park/626/437", "626", "437")
-        ],
         "652": [
             Campsite("Half Moon Bay SP", "33m", 23, "Francis Beach Campground", "https://www.reservecalifornia.com/Web/Default.aspx#!park/652/498", "652", "498")
         ],
@@ -52,3 +49,47 @@ def get_rec_to_campsites_map():
             Campsite("Manresa SB", "1h30m", 86, "Bay & Lupine Camps (sites 27-65) - Walk In From Parking Lot", "https://www.reservecalifornia.com/Web/Default.aspx#!park/672/565", "672", "565")
         ]
     }
+
+def get_recreation_gov_campsites():
+    """
+    Returns a list of Recreation.gov campsite objects.
+    Includes Yosemite and Bay Area campgrounds.
+    """
+    return [
+        Campsite(
+            park_name="Golden Gate NRA",
+            time_to="30m",
+            miles=15,
+            campground_name="Kirby Cove",
+            url="https://www.recreation.gov/camping/campgrounds/232491",
+            rec="recreation_gov",
+            campground_id="232491"
+        ),
+        Campsite(
+            park_name="Yosemite National Park",
+            time_to="3h30m",
+            miles=180,
+            campground_name="Upper Pines",
+            url="https://www.recreation.gov/camping/campgrounds/232447",
+            rec="recreation_gov",
+            campground_id="232447"
+        ),
+        Campsite(
+            park_name="Yosemite National Park",
+            time_to="3h30m",
+            miles=180,
+            campground_name="Lower Pines",
+            url="https://www.recreation.gov/camping/campgrounds/232450",
+            rec="recreation_gov",
+            campground_id="232450"
+        ),
+        Campsite(
+            park_name="Yosemite National Park",
+            time_to="3h15m",
+            miles=170,
+            campground_name="Wawona",
+            url="https://www.recreation.gov/camping/campgrounds/232446",
+            rec="recreation_gov",
+            campground_id="232446"
+        )
+    ]

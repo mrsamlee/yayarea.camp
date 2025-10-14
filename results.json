@@ -1,11 +1,1547 @@
 {
-  "last_updated": "2025-10-10T04:13:22.110235",
-  "total_results": 0,
+  "last_updated": "2025-10-13T23:40:09.386183-07:00",
+  "last_updated_pst": "2025-10-13 11:40 PM PDT",
+  "total_results": 170,
   "search_criteria": {
-    "start_date": "2025-10-11",
-    "end_date": "2026-03-11",
+    "batch1": "Tomorrow to 3 months",
+    "batch2": "3 months to 6 months",
     "consecutive_nights": 2,
     "weekends_only": true
   },
-  "results": []
+  "batch_info": {
+    "batch1_results": 45,
+    "batch2_results": 125
+  },
+  "results": [
+    {
+      "facility_id": "232446",
+      "facility_name": "Wawona Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "Group Camp",
+      "booking_date": "2025-12-19",
+      "booking_url": "https://www.recreation.gov/camping/campsites/546",
+      "miles": 170
+    },
+    {
+      "facility_id": "232446",
+      "facility_name": "Wawona Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "Group Camp",
+      "booking_date": "2025-12-26",
+      "booking_url": "https://www.recreation.gov/camping/campsites/546",
+      "miles": 170
+    },
+    {
+      "facility_id": "232446",
+      "facility_name": "Wawona Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "Group Camp",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/546",
+      "miles": 170
+    },
+    {
+      "facility_id": "232446",
+      "facility_name": "Wawona Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "Group Camp",
+      "booking_date": "2026-01-02",
+      "booking_url": "https://www.recreation.gov/camping/campsites/546",
+      "miles": 170
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "039",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/96",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "057",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/259",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "035",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/92",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "063",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/287",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "072",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/143",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "037",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/94",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "036",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/93",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "070",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/289",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "021",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/79",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "040",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/98",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "093",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/235",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "060",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/284",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "046",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/102",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "043",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/99",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "025",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/82",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "038",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/95",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "063",
+      "booking_date": "2026-01-02",
+      "booking_url": "https://www.recreation.gov/camping/campsites/287",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "079",
+      "booking_date": "2026-01-02",
+      "booking_url": "https://www.recreation.gov/camping/campsites/171",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "056",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/309",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "026",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/83",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "042",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/97",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "041",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/257",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "062",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/286",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "088",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/263",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "089",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/174",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "023",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/81",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "082",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/262",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "031",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/88",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "092",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/312",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "058",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/140",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "065",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/260",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "084",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/293",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "066",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/310",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "087",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/311",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "064",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/141",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "085",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/173",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "007",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/222",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "090",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/175",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "027",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/84",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "008",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/221",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "010",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/224",
+      "miles": 180
+    },
+    {
+      "facility_id": "232446",
+      "facility_name": "Wawona Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "Group Camp",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/546",
+      "miles": 170
+    },
+    {
+      "facility_id": "232446",
+      "facility_name": "Wawona Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "Group Camp",
+      "booking_date": "2026-01-02",
+      "booking_url": "https://www.recreation.gov/camping/campsites/546",
+      "miles": 170
+    },
+    {
+      "facility_id": "232446",
+      "facility_name": "Wawona Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "Group Camp",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/546",
+      "miles": 170
+    },
+    {
+      "facility_id": "232446",
+      "facility_name": "Wawona Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "Group Camp",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/546",
+      "miles": 170
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "069",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/232",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "065",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/260",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "084",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/293",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "063",
+      "booking_date": "2026-01-02",
+      "booking_url": "https://www.recreation.gov/camping/campsites/287",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "043",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/99",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "093",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/235",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "090",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/175",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "009",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/223",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "037",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/94",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "041",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/257",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "039",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/96",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "011",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/225",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "061",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/285",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "084",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/293",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "092",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/312",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "034",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/91",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "090",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/175",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "057",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/259",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "058",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/140",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "060",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/284",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "040",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/98",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "062",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/286",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "008",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/221",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "043",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/99",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "080",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/144",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "007",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/222",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "085",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/173",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "027",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/84",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "026",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/83",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "083",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/172",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "087",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/311",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "032",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/89",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "086",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/145",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "045",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/101",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "091",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/146",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "010",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/224",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "040",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/98",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "089",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/174",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "024",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/256",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "057",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/259",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "092",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/312",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "021",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/79",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "079",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/171",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "078",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/170",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "026",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/83",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "070",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/289",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "008",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/221",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "036",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/93",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "089",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/174",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "022",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/80",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "016",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/138",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "056",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/309",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "042",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/97",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "087",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/311",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "064",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/141",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "079",
+      "booking_date": "2026-01-02",
+      "booking_url": "https://www.recreation.gov/camping/campsites/171",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "058",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/140",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "014",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/228",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "039",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/96",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "088",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/263",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "038",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/95",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "059",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/231",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "037",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/94",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "046",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/102",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "025",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/82",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "053",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/139",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "031",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/88",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "082",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/262",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "077",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/291",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "023",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/81",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "042",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/97",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "007",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/222",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "055",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/258",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "020",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/78",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "064",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/141",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "028",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/85",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "085",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/173",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "063",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/287",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "038",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/95",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "072",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/143",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "065",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/260",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "035",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/92",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "063",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/287",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "088",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/263",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "035",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/92",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "070",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/289",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "021",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/79",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "041",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/257",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "060",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/284",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "056",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/309",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "082",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/262",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "031",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/88",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "027",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/84",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "010",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/224",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "066",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/310",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "081",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/292",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "093",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/235",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "025",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/82",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "036",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/93",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "029",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/86",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "072",
+      "booking_date": "2026-01-23",
+      "booking_url": "https://www.recreation.gov/camping/campsites/143",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "023",
+      "booking_date": "2026-01-09",
+      "booking_url": "https://www.recreation.gov/camping/campsites/81",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "026",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/83",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "086",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/145",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "036",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/93",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "029",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/86",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "079",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/171",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "001",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/105",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "081",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/292",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "039",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/96",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "056",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/309",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "040",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/98",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "063",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/287",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "021",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/79",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "058",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/140",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "065",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/260",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "060",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/284",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "066",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/310",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "057",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/259",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "028",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/85",
+      "miles": 180
+    },
+    {
+      "facility_id": "232447",
+      "facility_name": "Upper Pines Campground",
+      "recreation_area": "Yosemite National Park, CA",
+      "campsite_site_name": "070",
+      "booking_date": "2026-02-06",
+      "booking_url": "https://www.recreation.gov/camping/campsites/289",
+      "miles": 180
+    }
+  ]
 }

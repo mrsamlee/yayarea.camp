@@ -1,10 +1,14 @@
 import datetime
 import signal
 import json
+import sys
+import os
+import argparse
 from dateutil.relativedelta import relativedelta
-from camply.search import SearchReserveCalifornia
+from dateutil import tz
+from camply.search import SearchReserveCalifornia, SearchRecreationDotGov
 from camply.containers import SearchWindow
-from campsites_map import get_rec_to_campsites_map
+from campsites_map import get_rec_to_campsites_map, get_recreation_gov_campsites
 
 class TimeoutError(Exception):
     pass
@@ -136,38 +140,89 @@ def display_results(results, miles_lookup):
         
         print(f"{site.recreation_area}, {site.facility_name} URL: {site.booking_url} (Miles: {miles}) (Dates: {dates_str})")
 
-def save_results_to_json(results, miles_lookup, search_criteria):
+def save_results_to_json(results, miles_lookup, search_criteria, batch_name="default", append=False):
     """
     Save search results to results.json in the root folder.
     """
     json_results = results_to_json(results, miles_lookup)
     
-    output_data = {
-        "last_updated": datetime.datetime.now().isoformat(),
-        "total_results": len(results),
-        "search_criteria": search_criteria,
-        "results": json_results
-    }
+    # Get current time in Pacific Time
+    pacific_tz = tz.gettz('US/Pacific')
+    pacific_time = datetime.datetime.now(pacific_tz)
+    
+    if append and os.path.exists('results.json'):
+        # Load existing results and append
+        with open('results.json', 'r') as f:
+            existing_data = json.load(f)
+        
+        # Combine results
+        combined_results = existing_data.get('results', []) + json_results
+        total_results = len(combined_results)
+        
+        # Update with latest batch info
+        output_data = {
+            "last_updated": pacific_time.isoformat(),
+            "last_updated_pst": pacific_time.strftime('%Y-%m-%d %I:%M %p %Z'),
+            "total_results": total_results,
+            "search_criteria": search_criteria,
+            "batch_name": batch_name,
+            "batch_results": len(results),
+            "results": combined_results
+        }
+    else:
+        # Create new results file
+        output_data = {
+            "last_updated": pacific_time.isoformat(),
+            "last_updated_pst": pacific_time.strftime('%Y-%m-%d %I:%M %p %Z'),
+            "total_results": len(results),
+            "search_criteria": search_criteria,
+            "batch_name": batch_name,
+            "batch_results": len(results),
+            "results": json_results
+        }
     
     with open('results.json', 'w') as f:
         json.dump(output_data, f, indent=2)
     
-    print(f"Results saved to results.json ({len(results)} campsites)")
+    print(f"Results saved to results.json ({len(results)} campsites from {batch_name}) - {pacific_time.strftime('%Y-%m-%d %I:%M %p %Z')}")
 
 def main():
     """
     Main function to run the campsite search and save results.
     """
-    print("Starting campsite search...")
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='Search for campsite availability')
+    parser.add_argument('--start-date', type=str, help='Start date in YYYY-MM-DD format')
+    parser.add_argument('--end-date', type=str, help='End date in YYYY-MM-DD format')
+    parser.add_argument('--batch-name', type=str, default='default', help='Name for this batch (for logging)')
+    parser.add_argument('--provider', type=str, default='reserve_california', 
+                       choices=['reserve_california', 'recreation_gov'],
+                       help='Reservation system provider')
     
-    camp_data = get_rec_to_campsites_map()
+    args = parser.parse_args()
+    
+    print(f"Starting campsite search (Batch: {args.batch_name}, Provider: {args.provider})...")
+    
+    # Load campground data based on provider
+    if args.provider == 'reserve_california':
+        camp_data = get_rec_to_campsites_map()
+    else:  # recreation_gov
+        camp_data = {'recreation_gov': get_recreation_gov_campsites()}
     
     # Build efficient lookup dictionary once
     miles_lookup = build_campground_miles_lookup(camp_data)
 
-    # Search parameters
-    start_date = datetime.date.today() + relativedelta(days=1)
-    end_date = start_date + relativedelta(months=5)
+    # Search parameters - use command line args or defaults
+    if args.start_date and args.end_date:
+        start_date = datetime.datetime.strptime(args.start_date, '%Y-%m-%d').date()
+        end_date = datetime.datetime.strptime(args.end_date, '%Y-%m-%d').date()
+        print(f"Using provided dates: {start_date} to {end_date}")
+    else:
+        # Default behavior for backward compatibility
+        start_date = datetime.date.today() + relativedelta(days=1)
+        end_date = start_date + relativedelta(months=6)
+        print(f"Using default dates: {start_date} to {end_date}")
+    
     consecutive_nights = 2  # Look for 2 consecutive nights
     weekends_only = True    # Only search for weekend availability (Friday-Saturday)
 
@@ -204,18 +259,31 @@ def main():
             # Create search window for this month
             search_window = SearchWindow(start_date=window_start, end_date=window_end)
             
-            searcher = SearchReserveCalifornia(
-                search_window=search_window,
-                recreation_area=[],  # We're using specific campgrounds instead
-                campgrounds=campground_ids,
-                nights=consecutive_nights,  # Number of consecutive nights
-                weekends_only=weekends_only  # Only search weekends
-            )
+            # Create searcher based on provider
+            if args.provider == 'reserve_california':
+                searcher = SearchReserveCalifornia(
+                    search_window=search_window,
+                    recreation_area=[],  # We're using specific campgrounds instead
+                    campgrounds=campground_ids,
+                    nights=consecutive_nights,  # Number of consecutive nights
+                    weekends_only=weekends_only  # Only search weekends
+                )
+            else:  # recreation_gov
+                searcher = SearchRecreationDotGov(
+                    search_window=search_window,
+                    campgrounds=campground_ids,
+                    nights=consecutive_nights,  # Number of consecutive nights
+                    weekends_only=weekends_only  # Only search weekends
+                )
             
             # Use timeout wrapper to prevent hanging (1 minute per month)
             try:
                 month_results = search_with_timeout(searcher, timeout_seconds=60)
-                month_results = [result for result in month_results if "Hike" not in result.campsite_site_name]
+                # Filter out hike-in sites and accessible sites
+                month_results = [result for result in month_results 
+                               if "Hike" not in result.campsite_site_name 
+                               and "Accessible" not in result.campsite_site_name
+                               and "ADA" not in result.campsite_site_name]
             except Exception as e:
                 print(f"  Error during search for {window_start.strftime('%Y-%m')}: {e}")
                 print(f"  Error type: {type(e).__name__}")
@@ -229,7 +297,7 @@ def main():
                 print(f"  No sites found for {window_start.strftime('%Y-%m')}")
         
         # Save results to JSON
-        save_results_to_json(all_results, miles_lookup, search_criteria)
+        save_results_to_json(all_results, miles_lookup, search_criteria, args.batch_name, append=False)
         
         # Display results in console
         if all_results:
@@ -241,13 +309,13 @@ def main():
         print(f"Search timed out: {e}")
         if all_results:
             print(f"\nPartial results found before timeout ({len(all_results)} sites):")
-            save_results_to_json(all_results, miles_lookup, search_criteria)
+            save_results_to_json(all_results, miles_lookup, search_criteria, args.batch_name, append=False)
             display_results(all_results, miles_lookup)
     except ConnectionError as e:
         print(f"Network connection error: {e}")
         if all_results:
             print(f"\nPartial results found before connection error ({len(all_results)} sites):")
-            save_results_to_json(all_results, miles_lookup, search_criteria)
+            save_results_to_json(all_results, miles_lookup, search_criteria, args.batch_name, append=False)
             display_results(all_results, miles_lookup)
     except Exception as e:
         print(f"Unexpected error during search: {e}")
@@ -255,12 +323,12 @@ def main():
         
         if all_results:
             print(f"\nPartial results found before error ({len(all_results)} sites):")
-            save_results_to_json(all_results, miles_lookup, search_criteria)
+            save_results_to_json(all_results, miles_lookup, search_criteria, args.batch_name, append=False)
             display_results(all_results, miles_lookup)
         else:
             # No results at all - create empty results file
             print("No results found, creating empty results file...")
-            save_results_to_json([], miles_lookup, search_criteria)
+            save_results_to_json([], miles_lookup, search_criteria, args.batch_name, append=False)
 
 if __name__ == "__main__":
     main()

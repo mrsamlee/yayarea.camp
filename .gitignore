@@ -22,6 +22,8 @@ wheels/
 MANIFEST
 
 .history/
+serve_local.py
+create_favicon.py
 
 # Virtual environments
 venv/

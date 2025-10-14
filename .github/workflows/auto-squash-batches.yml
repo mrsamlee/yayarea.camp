@@ -21,6 +21,11 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 0  # Fetch full history
         
+    - name: Configure Git
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        
     - name: Count commits and check for squashing
       id: check-commits
       run: |
@@ -34,7 +39,7 @@ jobs:
           echo "needs_squash=true" >> $GITHUB_OUTPUT
           echo "✅ More than 50 commits detected - will squash in batches"
           
-          # Calculate how many commits to squash (keep last 20, squash the rest)
+          # Calculate how many commits to squash (keep most recent 20, squash the older ones)
           KEEP_COMMITS=20
           SQUASH_COUNT=$((COMMIT_COUNT - KEEP_COMMITS))
           echo "squash_count=$SQUASH_COUNT" >> $GITHUB_OUTPUT
@@ -49,9 +54,10 @@ jobs:
       run: |
         echo "🔄 Starting batched commit squashing..."
         
-        # Get the commit hash to keep (20th from HEAD)
+        # Get the commit hash that's 20 commits back from HEAD
+        # This is the commit we want to keep (everything after this will be preserved)
         KEEP_COMMIT=$(git rev-list --max-count=1 --skip=${{ steps.check-commits.outputs.keep_commits }} HEAD)
-        echo "Keeping commits from: $KEEP_COMMIT"
+        echo "Keeping most recent ${{ steps.check-commits.outputs.keep_commits }} commits, squashing everything before: $KEEP_COMMIT"
         
         # Create a backup branch
         git checkout -b backup-before-squash-$(date +%Y%m%d-%H%M%S)
@@ -67,11 +73,11 @@ jobs:
         
         All functionality remains the same - this is just a history cleanup."
         
-        # Interactive rebase to squash commits
-        # Reset to the keep commit but preserve changes
+        # Simple approach: Keep the most recent 20 commits, squash everything older
+        # Reset to the 20th most recent commit (KEEP_COMMIT) but keep all changes
         git reset --soft $KEEP_COMMIT
         
-        # Create the squashed commit
+        # Create a single squashed commit for all the older changes
         git commit -m "$SQUASH_MESSAGE"
         
         # Force push the cleaned history
