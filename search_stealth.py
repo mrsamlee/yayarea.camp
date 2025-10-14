@@ -38,7 +38,11 @@ REFERRERS = [
 
 def setup_stealth_session():
     """Set up an ultra-stealth session with maximum bypass techniques."""
-    session = requests.Session()
+    # Use the original Session class to avoid recursion
+    if hasattr(requests, '_original_session_stealth'):
+        session = requests._original_session_stealth()
+    else:
+        session = requests.Session()
     
     # Random selection for each request
     user_agent = random.choice(USER_AGENTS)
@@ -85,10 +89,11 @@ def monkey_patch_requests_stealth():
     """Ultra-stealth monkey patch with maximum human-like behavior."""
     import requests
     
-    # Store original methods
-    original_get = requests.get
-    original_post = requests.post
-    original_session = requests.Session
+    # Store original methods to avoid recursion
+    if not hasattr(requests, '_original_get_stealth'):
+        requests._original_get_stealth = requests.get
+        requests._original_post_stealth = requests.post
+        requests._original_session_stealth = requests.Session
     
     def patched_get(*args, **kwargs):
         session = setup_stealth_session()
@@ -104,10 +109,11 @@ def monkey_patch_requests_stealth():
     def patched_session(*args, **kwargs):
         return setup_stealth_session()
     
-    # Apply patches
-    requests.get = patched_get
-    requests.post = patched_post
-    requests.Session = patched_session
+    # Apply patches only if not already patched
+    if requests.get != patched_get:
+        requests.get = patched_get
+        requests.post = patched_post
+        requests.Session = patched_session
 
 if __name__ == "__main__":
     # Apply the ultra-stealth monkey patch

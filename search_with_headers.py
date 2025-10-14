@@ -34,7 +34,11 @@ REFERRERS = [
 
 def setup_session():
     """Set up a requests session with advanced anti-bot bypass techniques."""
-    session = requests.Session()
+    # Use the original Session class to avoid recursion
+    if hasattr(requests, '_original_session'):
+        session = requests._original_session()
+    else:
+        session = requests.Session()
     
     # Random user agent and referrer
     user_agent = random.choice(USER_AGENTS)
@@ -78,10 +82,11 @@ def monkey_patch_requests():
     """Monkey patch requests to use our custom session with advanced bypass techniques."""
     import requests
     
-    # Store original methods
-    original_get = requests.get
-    original_post = requests.post
-    original_session = requests.Session
+    # Store original methods to avoid recursion
+    if not hasattr(requests, '_original_get'):
+        requests._original_get = requests.get
+        requests._original_post = requests.post
+        requests._original_session = requests.Session
     
     def patched_get(*args, **kwargs):
         session = setup_session()
@@ -98,10 +103,11 @@ def monkey_patch_requests():
         # Override Session creation to use our enhanced session
         return setup_session()
     
-    # Apply patches
-    requests.get = patched_get
-    requests.post = patched_post
-    requests.Session = patched_session
+    # Apply patches only if not already patched
+    if requests.get != patched_get:
+        requests.get = patched_get
+        requests.post = patched_post
+        requests.Session = patched_session
 
 if __name__ == "__main__":
     # Apply the monkey patch
