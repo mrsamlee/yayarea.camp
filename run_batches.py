@@ -79,7 +79,8 @@ def merge_results():
             print(f"Loaded {len(batch2_results)} results from batch 2")
     
     # Create merged results file
-    pacific_tz = datetime.timezone(datetime.timedelta(hours=-8))  # PST
+    from dateutil import tz
+    pacific_tz = tz.gettz('US/Pacific')
     pacific_time = datetime.datetime.now(pacific_tz)
     
     merged_data = {

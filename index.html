@@ -178,10 +178,27 @@
                 }
                 document.getElementById('lastUpdated').textContent = lastUpdatedText;
                 
-                // Update search criteria with date range
-                const startDate = new Date(data.search_criteria.start_date).toLocaleDateString();
-                const endDate = new Date(data.search_criteria.end_date).toLocaleDateString();
-                const searchCriteria = `${data.search_criteria.consecutive_nights} nights, Weekends only (Fri-Sat) | ${startDate} - ${endDate}`;
+                // Update search criteria with date range - handle both old and new batch formats
+                let searchCriteria;
+                if (data.search_criteria && data.search_criteria.start_date && data.search_criteria.end_date) {
+                    // Old format with single date range
+                    const startDate = new Date(data.search_criteria.start_date).toLocaleDateString();
+                    const endDate = new Date(data.search_criteria.end_date).toLocaleDateString();
+                    searchCriteria = `${data.search_criteria.consecutive_nights} nights, Weekends only (Fri-Sat) | ${startDate} - ${endDate}`;
+                } else if (data.search_criteria && data.search_criteria.batch1 && data.search_criteria.batch2) {
+                    // New batch format - show the full range
+                    const tomorrow = new Date();
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    const sixMonths = new Date();
+                    sixMonths.setMonth(sixMonths.getMonth() + 6);
+                    
+                    const startDate = tomorrow.toLocaleDateString();
+                    const endDate = sixMonths.toLocaleDateString();
+                    searchCriteria = `2 nights, Weekends only (Fri-Sat) | ${startDate} - ${endDate}`;
+                } else {
+                    // Fallback
+                    searchCriteria = "2 nights, Weekends only (Fri-Sat) | Date range unavailable";
+                }
                 document.getElementById('searchCriteria').textContent = searchCriteria;
                 
                 // Display results
