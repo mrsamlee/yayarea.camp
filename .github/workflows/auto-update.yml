@@ -86,9 +86,20 @@ jobs:
             echo "has_results=true" >> $GITHUB_OUTPUT
             echo "✅ Browser headers search succeeded with $TOTAL_RESULTS results"
           else
-            echo "❌ Both search methods failed after multiple attempts"
-            echo "search_success=false" >> $GITHUB_OUTPUT
-            echo "has_results=false" >> $GITHUB_OUTPUT
+            echo "Browser headers search failed, trying ultra-stealth method..."
+            
+            # Try ultra-stealth search as last resort
+            echo "=== Trying ultra-stealth search (search_stealth.py) ==="
+            if try_script "search_stealth.py"; then
+              TOTAL_RESULTS=$(python3 -c "import json; data=json.load(open('results.json')); print(data.get('total_results', 0))")
+              echo "search_success=true" >> $GITHUB_OUTPUT
+              echo "has_results=true" >> $GITHUB_OUTPUT
+              echo "✅ Ultra-stealth search succeeded with $TOTAL_RESULTS results"
+            else
+              echo "❌ All search methods failed after multiple attempts"
+              echo "search_success=false" >> $GITHUB_OUTPUT
+              echo "has_results=false" >> $GITHUB_OUTPUT
+            fi
           fi
         fi
         

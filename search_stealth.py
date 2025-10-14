@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Advanced wrapper script that modifies requests to bypass anti-bot detection
-and handles 403 Forbidden errors from Reserve California.
+Ultra-stealth search script with maximum anti-bot bypass techniques.
+This is the most aggressive approach to bypass Reserve California's blocking.
 """
 
 import requests
@@ -11,7 +11,7 @@ import json
 from urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
 
-# More diverse and current user agents
+# Most current and diverse user agents
 USER_AGENTS = [
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
@@ -19,28 +19,32 @@ USER_AGENTS = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0',
     'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0',
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0'
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 OPR/117.0.0.0',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 OPR/117.0.0.0'
 ]
 
-# Common referrers to make requests look more legitimate
+# Realistic referrers and origins
 REFERRERS = [
-    'https://www.google.com/',
-    'https://www.bing.com/',
-    'https://duckduckgo.com/',
+    'https://www.google.com/search?q=california+camping+reservations',
+    'https://www.bing.com/search?q=reserve+california+camping',
+    'https://duckduckgo.com/?q=california+state+parks+camping',
     'https://www.reservecalifornia.com/',
     'https://www.parks.ca.gov/',
-    'https://www.recreation.gov/'
+    'https://www.recreation.gov/',
+    'https://www.google.com/',
+    'https://www.bing.com/'
 ]
 
-def setup_session():
-    """Set up a requests session with advanced anti-bot bypass techniques."""
+def setup_stealth_session():
+    """Set up an ultra-stealth session with maximum bypass techniques."""
     session = requests.Session()
     
-    # Random user agent and referrer
+    # Random selection for each request
     user_agent = random.choice(USER_AGENTS)
     referrer = random.choice(REFERRERS)
     
-    # More comprehensive and realistic headers
+    # Ultra-realistic headers that match modern browsers exactly
     session.headers.update({
         'User-Agent': user_agent,
         'Accept': 'application/json, text/plain, */*',
@@ -56,16 +60,19 @@ def setup_session():
         'Sec-Ch-Ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
         'Sec-Ch-Ua-Mobile': '?0',
         'Sec-Ch-Ua-Platform': '"macOS"',
+        'Sec-Ch-Ua-Platform-Version': '"14.0.0"',
         'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache'
+        'Pragma': 'no-cache',
+        'X-Requested-With': 'XMLHttpRequest'
     })
     
-    # Enhanced retry strategy including 403 errors
+    # Maximum retry strategy
     retry_strategy = Retry(
-        total=5,
-        backoff_factor=3,
+        total=7,
+        backoff_factor=5,
         status_forcelist=[403, 429, 500, 502, 503, 504],
-        allowed_methods=["GET", "POST"]
+        allowed_methods=["GET", "POST"],
+        raise_on_status=False
     )
     
     adapter = HTTPAdapter(max_retries=retry_strategy)
@@ -74,8 +81,8 @@ def setup_session():
     
     return session
 
-def monkey_patch_requests():
-    """Monkey patch requests to use our custom session with advanced bypass techniques."""
+def monkey_patch_requests_stealth():
+    """Ultra-stealth monkey patch with maximum human-like behavior."""
     import requests
     
     # Store original methods
@@ -84,19 +91,18 @@ def monkey_patch_requests():
     original_session = requests.Session
     
     def patched_get(*args, **kwargs):
-        session = setup_session()
-        # Longer, more human-like delays
-        time.sleep(random.uniform(2, 8))
+        session = setup_stealth_session()
+        # Very long, human-like delays
+        time.sleep(random.uniform(5, 15))
         return session.get(*args, **kwargs)
     
     def patched_post(*args, **kwargs):
-        session = setup_session()
-        time.sleep(random.uniform(2, 8))
+        session = setup_stealth_session()
+        time.sleep(random.uniform(5, 15))
         return session.post(*args, **kwargs)
     
     def patched_session(*args, **kwargs):
-        # Override Session creation to use our enhanced session
-        return setup_session()
+        return setup_stealth_session()
     
     # Apply patches
     requests.get = patched_get
@@ -104,8 +110,8 @@ def monkey_patch_requests():
     requests.Session = patched_session
 
 if __name__ == "__main__":
-    # Apply the monkey patch
-    monkey_patch_requests()
+    # Apply the ultra-stealth monkey patch
+    monkey_patch_requests_stealth()
     
     # Now import and run the main script
     import main
