@@ -6,9 +6,9 @@ import os
 import argparse
 from dateutil.relativedelta import relativedelta
 from dateutil import tz
-from camply.search import SearchReserveCalifornia
+from camply.search import SearchReserveCalifornia, SearchRecreationDotGov
 from camply.containers import SearchWindow
-from campsites_map import get_rec_to_campsites_map
+from campsites_map import get_rec_to_campsites_map, get_recreation_gov_campsites
 
 class TimeoutError(Exception):
     pass
@@ -195,12 +195,19 @@ def main():
     parser.add_argument('--start-date', type=str, help='Start date in YYYY-MM-DD format')
     parser.add_argument('--end-date', type=str, help='End date in YYYY-MM-DD format')
     parser.add_argument('--batch-name', type=str, default='default', help='Name for this batch (for logging)')
+    parser.add_argument('--provider', type=str, default='reserve_california', 
+                       choices=['reserve_california', 'recreation_gov'],
+                       help='Reservation system provider')
     
     args = parser.parse_args()
     
-    print(f"Starting campsite search (Batch: {args.batch_name})...")
+    print(f"Starting campsite search (Batch: {args.batch_name}, Provider: {args.provider})...")
     
-    camp_data = get_rec_to_campsites_map()
+    # Load campground data based on provider
+    if args.provider == 'reserve_california':
+        camp_data = get_rec_to_campsites_map()
+    else:  # recreation_gov
+        camp_data = {'recreation_gov': get_recreation_gov_campsites()}
     
     # Build efficient lookup dictionary once
     miles_lookup = build_campground_miles_lookup(camp_data)
@@ -252,13 +259,22 @@ def main():
             # Create search window for this month
             search_window = SearchWindow(start_date=window_start, end_date=window_end)
             
-            searcher = SearchReserveCalifornia(
-                search_window=search_window,
-                recreation_area=[],  # We're using specific campgrounds instead
-                campgrounds=campground_ids,
-                nights=consecutive_nights,  # Number of consecutive nights
-                weekends_only=weekends_only  # Only search weekends
-            )
+            # Create searcher based on provider
+            if args.provider == 'reserve_california':
+                searcher = SearchReserveCalifornia(
+                    search_window=search_window,
+                    recreation_area=[],  # We're using specific campgrounds instead
+                    campgrounds=campground_ids,
+                    nights=consecutive_nights,  # Number of consecutive nights
+                    weekends_only=weekends_only  # Only search weekends
+                )
+            else:  # recreation_gov
+                searcher = SearchRecreationDotGov(
+                    search_window=search_window,
+                    campgrounds=campground_ids,
+                    nights=consecutive_nights,  # Number of consecutive nights
+                    weekends_only=weekends_only  # Only search weekends
+                )
             
             # Use timeout wrapper to prevent hanging (1 minute per month)
             try:

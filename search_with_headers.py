@@ -109,4 +109,14 @@ if __name__ == "__main__":
     
     # Now import and run the main script
     import main
+    import sys
+    
+    # Pass through any command line arguments
+    if len(sys.argv) > 1:
+        # Reconstruct the command line arguments for main.py
+        main.sys.argv = sys.argv
+    else:
+        # Default to reserve_california if no provider specified
+        main.sys.argv = ['search_with_headers.py', '--provider', 'reserve_california']
+    
     main.main()

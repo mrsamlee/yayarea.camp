@@ -13,10 +13,10 @@ import json
 import os
 from dateutil.relativedelta import relativedelta
 
-def run_batch(start_date, end_date, batch_name, append=False):
-    """Run a single batch of the search."""
+def run_batch(start_date, end_date, batch_name, provider='reserve_california', append=False):
+    """Run a single batch of the search for a specific provider."""
     print(f"\n{'='*60}")
-    print(f"Starting {batch_name}")
+    print(f"Starting {batch_name} ({provider})")
     print(f"Date range: {start_date} to {end_date}")
     print(f"{'='*60}")
     
@@ -25,7 +25,8 @@ def run_batch(start_date, end_date, batch_name, append=False):
         'python3', 'main.py',
         '--start-date', start_date.strftime('%Y-%m-%d'),
         '--end-date', end_date.strftime('%Y-%m-%d'),
-        '--batch-name', batch_name
+        '--batch-name', batch_name,
+        '--provider', provider
     ]
     
     try:
@@ -49,34 +50,36 @@ def run_batch(start_date, end_date, batch_name, append=False):
         return False
 
 def merge_results():
-    """Merge results from both batches if they exist."""
-    batch1_file = 'results_batch1.json'
-    batch2_file = 'results_batch2.json'
+    """Merge results from all batches and providers."""
+    # Define all possible result files
+    result_files = [
+        'results_rc_batch1.json',  # Reserve California batch 1
+        'results_rc_batch2.json',  # Reserve California batch 2
+        'results_rg_batch1.json',  # Recreation.gov batch 1
+        'results_rg_batch2.json'   # Recreation.gov batch 2
+    ]
     
-    if not os.path.exists(batch1_file) and not os.path.exists(batch2_file):
+    if not any(os.path.exists(f) for f in result_files):
         print("No batch results found to merge")
         return
     
     merged_results = []
     total_results = 0
+    batch_info = {}
     
-    # Load batch 1 results
-    if os.path.exists(batch1_file):
-        with open(batch1_file, 'r') as f:
-            batch1_data = json.load(f)
-            batch1_results = batch1_data.get('results', [])
-            merged_results.extend(batch1_results)
-            total_results += len(batch1_results)
-            print(f"Loaded {len(batch1_results)} results from batch 1")
-    
-    # Load batch 2 results
-    if os.path.exists(batch2_file):
-        with open(batch2_file, 'r') as f:
-            batch2_data = json.load(f)
-            batch2_results = batch2_data.get('results', [])
-            merged_results.extend(batch2_results)
-            total_results += len(batch2_results)
-            print(f"Loaded {len(batch2_results)} results from batch 2")
+    # Load results from each file
+    for result_file in result_files:
+        if os.path.exists(result_file):
+            with open(result_file, 'r') as f:
+                data = json.load(f)
+                results = data.get('results', [])
+                merged_results.extend(results)
+                total_results += len(results)
+                
+                # Track batch info
+                file_key = result_file.replace('results_', '').replace('.json', '')
+                batch_info[file_key] = len(results)
+                print(f"Loaded {len(results)} results from {result_file}")
     
     # Create merged results file
     from dateutil import tz
@@ -94,8 +97,8 @@ def merge_results():
             "weekends_only": True
         },
         "batch_info": {
-            "batch1_results": len(batch1_data.get('results', [])) if os.path.exists(batch1_file) else 0,
-            "batch2_results": len(batch2_data.get('results', [])) if os.path.exists(batch2_file) else 0
+            "batch1_results": batch_info.get('rc_batch1', 0) + batch_info.get('rg_batch1', 0),
+            "batch2_results": batch_info.get('rc_batch2', 0) + batch_info.get('rg_batch2', 0)
         },
         "results": merged_results
     }
@@ -107,6 +110,10 @@ def merge_results():
     print(f"Total campsites found: {total_results}")
     print(f"Batch 1: {merged_data['batch_info']['batch1_results']} results")
     print(f"Batch 2: {merged_data['batch_info']['batch2_results']} results")
+    print(f"Reserve CA Batch 1: {batch_info.get('rc_batch1', 0)} results")
+    print(f"Reserve CA Batch 2: {batch_info.get('rc_batch2', 0)} results")
+    print(f"Recreation.gov Batch 1: {batch_info.get('rg_batch1', 0)} results")
+    print(f"Recreation.gov Batch 2: {batch_info.get('rg_batch2', 0)} results")
 
 def main():
     """Main function to run both batches."""
@@ -120,40 +127,52 @@ def main():
     print(f"Batch 1: {tomorrow} to {three_months}")
     print(f"Batch 2: {three_months} to {six_months}")
     
-    # Run batch 1
-    success1 = run_batch(tomorrow, three_months, "batch1", append=False)
+    # Run batch 1 for both providers
+    print(f"\n🔄 Running Batch 1 for both providers...")
     
-    if success1:
-        # Rename results.json to results_batch1.json
-        if os.path.exists('results.json'):
-            os.rename('results.json', 'results_batch1.json')
-            print("✅ Batch 1 results saved to results_batch1.json")
+    # Reserve California batch 1
+    success_rc1 = run_batch(tomorrow, three_months, "batch1", "reserve_california", append=False)
+    if success_rc1 and os.path.exists('results.json'):
+        os.rename('results.json', 'results_rc_batch1.json')
+        print("✅ Reserve California Batch 1 results saved to results_rc_batch1.json")
+    
+    # Recreation.gov batch 1
+    success_rg1 = run_batch(tomorrow, three_months, "batch1", "recreation_gov", append=False)
+    if success_rg1 and os.path.exists('results.json'):
+        os.rename('results.json', 'results_rg_batch1.json')
+        print("✅ Recreation.gov Batch 1 results saved to results_rg_batch1.json")
     
     # Wait 5 minutes between batches
     print(f"\n⏰ Waiting 5 minutes before starting batch 2...")
     time.sleep(300)  # 5 minutes
     
-    # Run batch 2
-    success2 = run_batch(three_months, six_months, "batch2", append=False)
+    # Run batch 2 for both providers
+    print(f"\n🔄 Running Batch 2 for both providers...")
     
-    if success2:
-        # Rename results.json to results_batch2.json
-        if os.path.exists('results.json'):
-            os.rename('results.json', 'results_batch2.json')
-            print("✅ Batch 2 results saved to results_batch2.json")
+    # Reserve California batch 2
+    success_rc2 = run_batch(three_months, six_months, "batch2", "reserve_california", append=False)
+    if success_rc2 and os.path.exists('results.json'):
+        os.rename('results.json', 'results_rc_batch2.json')
+        print("✅ Reserve California Batch 2 results saved to results_rc_batch2.json")
+    
+    # Recreation.gov batch 2
+    success_rg2 = run_batch(three_months, six_months, "batch2", "recreation_gov", append=False)
+    if success_rg2 and os.path.exists('results.json'):
+        os.rename('results.json', 'results_rg_batch2.json')
+        print("✅ Recreation.gov Batch 2 results saved to results_rg_batch2.json")
     
     # Merge results
     print(f"\n🔄 Merging results from both batches...")
     merge_results()
     
     # Clean up temporary files
-    for temp_file in ['results_batch1.json', 'results_batch2.json']:
+    for temp_file in ['results_rc_batch1.json', 'results_rc_batch2.json', 'results_rg_batch1.json', 'results_rg_batch2.json']:
         if os.path.exists(temp_file):
             os.remove(temp_file)
             print(f"🗑️ Cleaned up {temp_file}")
     
-    print(f"\n🎉 Two-batch search completed!")
-    print(f"Final results saved to results.json")
+    print(f"\n🎉 Two-batch search completed for both providers!")
+    print(f"Final merged results saved to results.json")
 
 if __name__ == "__main__":
     main()
