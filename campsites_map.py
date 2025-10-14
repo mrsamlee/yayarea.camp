@@ -53,7 +53,7 @@ def get_rec_to_campsites_map():
 def get_recreation_gov_campsites():
     """
     Returns a list of Recreation.gov campsite objects.
-    Starting with Kirby Cove.
+    Includes Yosemite and Bay Area campgrounds.
     """
     return [
         Campsite(
@@ -64,5 +64,32 @@ def get_recreation_gov_campsites():
             url="https://www.recreation.gov/camping/campgrounds/232491",
             rec="recreation_gov",
             campground_id="232491"
+        ),
+        Campsite(
+            park_name="Yosemite National Park",
+            time_to="3h30m",
+            miles=180,
+            campground_name="Upper Pines",
+            url="https://www.recreation.gov/camping/campgrounds/232447",
+            rec="recreation_gov",
+            campground_id="232447"
+        ),
+        Campsite(
+            park_name="Yosemite National Park",
+            time_to="3h30m",
+            miles=180,
+            campground_name="Lower Pines",
+            url="https://www.recreation.gov/camping/campgrounds/232450",
+            rec="recreation_gov",
+            campground_id="232450"
+        ),
+        Campsite(
+            park_name="Yosemite National Park",
+            time_to="3h15m",
+            miles=170,
+            campground_name="Wawona",
+            url="https://www.recreation.gov/camping/campgrounds/232446",
+            rec="recreation_gov",
+            campground_id="232446"
         )
     ]

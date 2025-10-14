@@ -279,7 +279,11 @@ def main():
             # Use timeout wrapper to prevent hanging (1 minute per month)
             try:
                 month_results = search_with_timeout(searcher, timeout_seconds=60)
-                month_results = [result for result in month_results if "Hike" not in result.campsite_site_name]
+                # Filter out hike-in sites and accessible sites
+                month_results = [result for result in month_results 
+                               if "Hike" not in result.campsite_site_name 
+                               and "Accessible" not in result.campsite_site_name
+                               and "ADA" not in result.campsite_site_name]
             except Exception as e:
                 print(f"  Error during search for {window_start.strftime('%Y-%m')}: {e}")
                 print(f"  Error type: {type(e).__name__}")
