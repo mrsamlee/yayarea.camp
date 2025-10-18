@@ -47,6 +47,11 @@ def get_rec_to_campsites_map():
         "672": [
             Campsite("Manresa SB", "1h30m", 86, "Willow Camps (sites 1-26) - Walk In From Parking Lot", "https://www.reservecalifornia.com/Web/Default.aspx#!park/672/564", "672", "564"),
             Campsite("Manresa SB", "1h30m", 86, "Bay & Lupine Camps (sites 27-65) - Walk In From Parking Lot", "https://www.reservecalifornia.com/Web/Default.aspx#!park/672/565", "672", "565")
+        ],
+        "690": [
+            Campsite("Pfeiffer Big Sur SP", "2h30m", 140, "South Camp (sites 1-78)", "https://www.reservecalifornia.com/Web/#!park/690/611", "690", "611"),
+            Campsite("Pfeiffer Big Sur SP", "2h30m", 140, "Weyland Camp (sites 79-130)", "https://www.reservecalifornia.com/Web/#!park/690/612", "690", "612"),
+            Campsite("Pfeiffer Big Sur SP", "2h30m", 140, "Main Camp (sites 131-188)", "https://www.reservecalifornia.com/Web/#!park/690/767", "690", "767")
         ]
     }
 
