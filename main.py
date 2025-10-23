@@ -279,12 +279,14 @@ def main():
             # Use timeout wrapper to prevent hanging (1 minute per month)
             try:
                 month_results = search_with_timeout(searcher, timeout_seconds=60)
-                # Filter out hike-in sites, accessible sites, and Kirby Cove day use sites
+                # Filter out hike-in sites, accessible sites, day use sites, walk-in sites, and Kirby Cove day use site
                 month_results = [result for result in month_results 
                                if "Hike" not in result.campsite_site_name 
                                and "Accessible" not in result.campsite_site_name
                                and "ADA" not in result.campsite_site_name
-                               and str(result.facility_id) != "4241"]  # Exclude Kirby Cove day use site
+                               and "day" not in result.campsite_site_name.lower()
+                               and "walk" not in result.campsite_site_name.lower()
+                               and ("4241" not in result.booking_url or str(result.facility_id) != "232491")]  # Exclude Kirby Cove day use site but keep other Kirby Cove sites
             except Exception as e:
                 print(f"  Error during search for {window_start.strftime('%Y-%m')}: {e}")
                 print(f"  Error type: {type(e).__name__}")
