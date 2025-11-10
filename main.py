@@ -16,9 +16,10 @@ class TimeoutError(Exception):
 def timeout_handler(signum, frame):
     raise TimeoutError("Search operation timed out")
 
-def generate_monthly_search_windows(start_date, end_date):
+def generate_monthly_search_windows(start_date, end_date, weekends_only=False):
     """
     Generate a list of monthly search windows between start_date and end_date.
+    When weekends_only=True, ensure each window contains at least one complete weekend.
     """
     search_windows = []
     current_date = start_date.replace(day=1)  # Start from first day of month
@@ -37,7 +38,23 @@ def generate_monthly_search_windows(start_date, end_date):
         
         # Only create window if it overlaps with our date range
         if current_date <= end_date and actual_end >= start_date:
-            search_windows.append((current_date, actual_end))
+            if weekends_only:
+                # Check if this window contains at least one complete weekend (Friday-Saturday)
+                has_weekend = False
+                check_date = max(current_date, start_date)
+                while check_date <= actual_end:
+                    if check_date.weekday() == 4:  # Friday
+                        # Check if the next day (Saturday) is also in range
+                        saturday = check_date + datetime.timedelta(days=1)
+                        if saturday <= actual_end:
+                            has_weekend = True
+                            break
+                    check_date += datetime.timedelta(days=1)
+                
+                if has_weekend:
+                    search_windows.append((current_date, actual_end))
+            else:
+                search_windows.append((current_date, actual_end))
         
         current_date = next_month
     
@@ -243,8 +260,8 @@ def main():
         for campground in camp_data.get(rec_area_id):
             campground_ids.append(campground.campground_id)
 
-    # Generate monthly search windows
-    monthly_windows = generate_monthly_search_windows(start_date, end_date)
+    # Generate monthly search windows - pass weekends_only parameter
+    monthly_windows = generate_monthly_search_windows(start_date, end_date, weekends_only)
     print(f"Searching {len(monthly_windows)} monthly windows...")
 
     all_results = []
@@ -279,12 +296,14 @@ def main():
             # Use timeout wrapper to prevent hanging (1 minute per month)
             try:
                 month_results = search_with_timeout(searcher, timeout_seconds=60)
-                # Filter out hike-in sites, accessible sites, and Kirby Cove day use sites
+                # Filter out hike-in sites, accessible sites, day use sites, walk-in sites, and Kirby Cove day use site
                 month_results = [result for result in month_results 
                                if "Hike" not in result.campsite_site_name 
                                and "Accessible" not in result.campsite_site_name
                                and "ADA" not in result.campsite_site_name
-                               and str(result.facility_id) != "4241"]  # Exclude Kirby Cove day use site
+                               and "day" not in result.campsite_site_name.lower()
+                               and "walk" not in result.campsite_site_name.lower()
+                               and ("4241" not in result.booking_url or str(result.facility_id) != "232491")]  # Exclude Kirby Cove day use site but keep other Kirby Cove sites
             except Exception as e:
                 print(f"  Error during search for {window_start.strftime('%Y-%m')}: {e}")
                 print(f"  Error type: {type(e).__name__}")
