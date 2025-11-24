@@ -71,6 +71,15 @@ def get_recreation_gov_campsites():
             campground_id="232491"
         ),
         Campsite(
+            park_name="Presidio of San Francisco",
+            time_to="20m",
+            miles=8,
+            campground_name="Rob Hill Group Campground",
+            url="https://www.recreation.gov/camping/campgrounds/10172170",
+            rec="recreation_gov",
+            campground_id="10172170"
+        ),
+        Campsite(
             park_name="Yosemite National Park",
             time_to="3h30m",
             miles=180,

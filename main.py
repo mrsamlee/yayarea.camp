@@ -91,6 +91,16 @@ def build_campground_miles_lookup(camp_data):
             lookup[campground.campground_id] = campground.miles
     return lookup
 
+def build_campground_url_lookup(camp_data):
+    """
+    Build a lookup dictionary for campground_id -> url mapping.
+    """
+    lookup = {}
+    for rec_area_id in camp_data.keys():
+        for campground in camp_data.get(rec_area_id):
+            lookup[campground.campground_id] = campground.url
+    return lookup
+
 def get_campsite_miles(site, miles_lookup):
     """
     Get the miles from the lookup dictionary for a given site.
@@ -98,7 +108,15 @@ def get_campsite_miles(site, miles_lookup):
     facility_id_str = str(site.facility_id)
     return miles_lookup.get(facility_id_str, 999)
 
-def results_to_json(results, miles_lookup):
+def get_campsite_url(site, url_lookup):
+    """
+    Get the URL from the lookup dictionary for a given site.
+    Falls back to site.booking_url if not found in lookup.
+    """
+    facility_id_str = str(site.facility_id)
+    return url_lookup.get(facility_id_str, site.booking_url)
+
+def results_to_json(results, miles_lookup, url_lookup):
     """
     Convert search results to JSON format.
     """
@@ -111,13 +129,14 @@ def results_to_json(results, miles_lookup):
     json_results = []
     for site in results:
         miles = get_campsite_miles(site, miles_lookup)
+        booking_url = get_campsite_url(site, url_lookup)
         json_results.append({
             'facility_id': str(site.facility_id),
             'facility_name': site.facility_name,
             'recreation_area': site.recreation_area,
             'campsite_site_name': site.campsite_site_name,
             'booking_date': site.booking_date.strftime('%Y-%m-%d'),
-            'booking_url': site.booking_url,
+            'booking_url': booking_url,
             'miles': miles
         })
     
@@ -157,11 +176,11 @@ def display_results(results, miles_lookup):
         
         print(f"{site.recreation_area}, {site.facility_name} URL: {site.booking_url} (Miles: {miles}) (Dates: {dates_str})")
 
-def save_results_to_json(results, miles_lookup, search_criteria, batch_name="default", append=False):
+def save_results_to_json(results, miles_lookup, url_lookup, search_criteria, batch_name="default", append=False):
     """
     Save search results to results.json in the root folder.
     """
-    json_results = results_to_json(results, miles_lookup)
+    json_results = results_to_json(results, miles_lookup, url_lookup)
     
     # Get current time in Pacific Time
     pacific_tz = tz.gettz('US/Pacific')
@@ -226,8 +245,9 @@ def main():
     else:  # recreation_gov
         camp_data = {'recreation_gov': get_recreation_gov_campsites()}
     
-    # Build efficient lookup dictionary once
+    # Build efficient lookup dictionaries once
     miles_lookup = build_campground_miles_lookup(camp_data)
+    url_lookup = build_campground_url_lookup(camp_data)
 
     # Search parameters - use command line args or defaults
     if args.start_date and args.end_date:
@@ -317,7 +337,7 @@ def main():
                 print(f"  No sites found for {window_start.strftime('%Y-%m')}")
         
         # Save results to JSON
-        save_results_to_json(all_results, miles_lookup, search_criteria, args.batch_name, append=False)
+        save_results_to_json(all_results, miles_lookup, url_lookup, search_criteria, args.batch_name, append=False)
         
         # Display results in console
         if all_results:
@@ -329,13 +349,13 @@ def main():
         print(f"Search timed out: {e}")
         if all_results:
             print(f"\nPartial results found before timeout ({len(all_results)} sites):")
-            save_results_to_json(all_results, miles_lookup, search_criteria, args.batch_name, append=False)
+            save_results_to_json(all_results, miles_lookup, url_lookup, search_criteria, args.batch_name, append=False)
             display_results(all_results, miles_lookup)
     except ConnectionError as e:
         print(f"Network connection error: {e}")
         if all_results:
             print(f"\nPartial results found before connection error ({len(all_results)} sites):")
-            save_results_to_json(all_results, miles_lookup, search_criteria, args.batch_name, append=False)
+            save_results_to_json(all_results, miles_lookup, url_lookup, search_criteria, args.batch_name, append=False)
             display_results(all_results, miles_lookup)
     except Exception as e:
         print(f"Unexpected error during search: {e}")
@@ -343,12 +363,12 @@ def main():
         
         if all_results:
             print(f"\nPartial results found before error ({len(all_results)} sites):")
-            save_results_to_json(all_results, miles_lookup, search_criteria, args.batch_name, append=False)
+            save_results_to_json(all_results, miles_lookup, url_lookup, search_criteria, args.batch_name, append=False)
             display_results(all_results, miles_lookup)
         else:
             # No results at all - create empty results file
             print("No results found, creating empty results file...")
-            save_results_to_json([], miles_lookup, search_criteria, args.batch_name, append=False)
+            save_results_to_json([], miles_lookup, url_lookup, search_criteria, args.batch_name, append=False)
 
 if __name__ == "__main__":
     main()
