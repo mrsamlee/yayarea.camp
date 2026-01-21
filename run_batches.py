@@ -32,22 +32,32 @@ def run_batch(start_date, end_date, batch_name, provider='reserve_california', a
     try:
         # Run the search
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=1800)  # 30 minute timeout
-        
+
         if result.returncode == 0:
-            # Check if results.json was created and has results
+            # Check if results.json was created and check search status
             if os.path.exists('results.json'):
                 with open('results.json', 'r') as f:
                     data = json.load(f)
                     total_results = data.get('total_results', 0)
-                
-                if total_results > 0:
-                    print(f"✅ {batch_name} completed successfully with {total_results} results")
-                    print("STDOUT:", result.stdout)
-                    return True
-                else:
-                    print(f"❌ {batch_name} completed but returned 0 results")
+                    search_status = data.get('search_status', 'success')  # Default to success for backward compatibility
+                    error_message = data.get('error_message')
+
+                # Check search_status instead of just result count
+                # "success" = search completed without errors (0 results is valid - no availability)
+                # "partial" = some errors but got results
+                # "error" = all searches failed
+                if search_status == "error":
+                    print(f"❌ {batch_name} failed with errors: {error_message}")
                     print("STDOUT:", result.stdout)
                     return False
+                elif search_status == "partial":
+                    print(f"⚠️ {batch_name} completed with some errors ({total_results} results): {error_message}")
+                    print("STDOUT:", result.stdout)
+                    return True  # Still count as success if we got some results
+                else:  # success
+                    print(f"✅ {batch_name} completed successfully with {total_results} results")
+                    print("STDOUT:", result.stdout)
+                    return True  # 0 results is valid - means no availability (not an error)
             else:
                 print(f"❌ {batch_name} completed but no results.json created")
                 print("STDOUT:", result.stdout)

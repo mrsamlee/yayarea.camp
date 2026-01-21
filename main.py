@@ -176,9 +176,10 @@ def display_results(results, miles_lookup):
         
         print(f"{site.recreation_area}, {site.facility_name} URL: {site.booking_url} (Miles: {miles}) (Dates: {dates_str})")
 
-def save_results_to_json(results, miles_lookup, url_lookup, search_criteria, batch_name="default", append=False):
+def save_results_to_json(results, miles_lookup, url_lookup, search_criteria, batch_name="default", append=False, search_status="success", error_message=None):
     """
     Save search results to results.json in the root folder.
+    search_status: "success" (search completed normally), "partial" (some errors but got results), "error" (failed)
     """
     json_results = results_to_json(results, miles_lookup, url_lookup)
     
@@ -190,11 +191,11 @@ def save_results_to_json(results, miles_lookup, url_lookup, search_criteria, bat
         # Load existing results and append
         with open('results.json', 'r') as f:
             existing_data = json.load(f)
-        
+
         # Combine results
         combined_results = existing_data.get('results', []) + json_results
         total_results = len(combined_results)
-        
+
         # Update with latest batch info
         output_data = {
             "last_updated": pacific_time.isoformat(),
@@ -203,6 +204,8 @@ def save_results_to_json(results, miles_lookup, url_lookup, search_criteria, bat
             "search_criteria": search_criteria,
             "batch_name": batch_name,
             "batch_results": len(results),
+            "search_status": search_status,
+            "error_message": error_message,
             "results": combined_results
         }
     else:
@@ -214,6 +217,8 @@ def save_results_to_json(results, miles_lookup, url_lookup, search_criteria, bat
             "search_criteria": search_criteria,
             "batch_name": batch_name,
             "batch_results": len(results),
+            "search_status": search_status,
+            "error_message": error_message,
             "results": json_results
         }
     
@@ -285,7 +290,8 @@ def main():
     print(f"Searching {len(monthly_windows)} monthly windows...")
 
     all_results = []
-    
+    errors_encountered = []  # Track any errors during search
+
     try:
         for i, (window_start, window_end) in enumerate(monthly_windows, 1):
             if window_start == window_end:
@@ -327,6 +333,7 @@ def main():
             except Exception as e:
                 print(f"  Error during search for {window_start.strftime('%Y-%m')}: {e}")
                 print(f"  Error type: {type(e).__name__}")
+                errors_encountered.append(f"{window_start.strftime('%Y-%m')}: {type(e).__name__} - {str(e)}")
                 month_results = []
             
             if month_results:
@@ -336,9 +343,21 @@ def main():
             else:
                 print(f"  No sites found for {window_start.strftime('%Y-%m')}")
         
+        # Determine search status
+        if errors_encountered:
+            if all_results:
+                search_status = "partial"
+                error_msg = f"Some searches failed: {'; '.join(errors_encountered)}"
+            else:
+                search_status = "error"
+                error_msg = f"All searches failed: {'; '.join(errors_encountered)}"
+        else:
+            search_status = "success"
+            error_msg = None
+
         # Save results to JSON
-        save_results_to_json(all_results, miles_lookup, url_lookup, search_criteria, args.batch_name, append=False)
-        
+        save_results_to_json(all_results, miles_lookup, url_lookup, search_criteria, args.batch_name, append=False, search_status=search_status, error_message=error_msg)
+
         # Display results in console
         if all_results:
             display_results(all_results, miles_lookup)
@@ -347,28 +366,35 @@ def main():
             
     except TimeoutError as e:
         print(f"Search timed out: {e}")
+        error_msg = f"Search timed out: {e}"
         if all_results:
             print(f"\nPartial results found before timeout ({len(all_results)} sites):")
-            save_results_to_json(all_results, miles_lookup, url_lookup, search_criteria, args.batch_name, append=False)
+            save_results_to_json(all_results, miles_lookup, url_lookup, search_criteria, args.batch_name, append=False, search_status="partial", error_message=error_msg)
             display_results(all_results, miles_lookup)
+        else:
+            save_results_to_json([], miles_lookup, url_lookup, search_criteria, args.batch_name, append=False, search_status="error", error_message=error_msg)
     except ConnectionError as e:
         print(f"Network connection error: {e}")
+        error_msg = f"Network connection error: {e}"
         if all_results:
             print(f"\nPartial results found before connection error ({len(all_results)} sites):")
-            save_results_to_json(all_results, miles_lookup, url_lookup, search_criteria, args.batch_name, append=False)
+            save_results_to_json(all_results, miles_lookup, url_lookup, search_criteria, args.batch_name, append=False, search_status="partial", error_message=error_msg)
             display_results(all_results, miles_lookup)
+        else:
+            save_results_to_json([], miles_lookup, url_lookup, search_criteria, args.batch_name, append=False, search_status="error", error_message=error_msg)
     except Exception as e:
         print(f"Unexpected error during search: {e}")
         print(f"Error type: {type(e).__name__}")
-        
+        error_msg = f"{type(e).__name__}: {e}"
+
         if all_results:
             print(f"\nPartial results found before error ({len(all_results)} sites):")
-            save_results_to_json(all_results, miles_lookup, url_lookup, search_criteria, args.batch_name, append=False)
+            save_results_to_json(all_results, miles_lookup, url_lookup, search_criteria, args.batch_name, append=False, search_status="partial", error_message=error_msg)
             display_results(all_results, miles_lookup)
         else:
-            # No results at all - create empty results file
-            print("No results found, creating empty results file...")
-            save_results_to_json([], miles_lookup, url_lookup, search_criteria, args.batch_name, append=False)
+            # No results at all - create empty results file with error status
+            print("No results found, creating empty results file with error status...")
+            save_results_to_json([], miles_lookup, url_lookup, search_criteria, args.batch_name, append=False, search_status="error", error_message=error_msg)
 
 if __name__ == "__main__":
     main()
