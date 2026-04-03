@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-04-03T06:51:57.820583-07:00",
-  "last_updated_pst": "2026-04-03 06:51 AM PDT",
-  "total_results": 208,
+  "last_updated": "2026-04-03T07:59:16.097029-07:00",
+  "last_updated_pst": "2026-04-03 07:59 AM PDT",
+  "total_results": 209,
   "search_criteria": {
     "batch1": "Tomorrow to 3 months",
     "batch2": "3 months to 6 months",
@@ -9,10 +9,19 @@
     "weekends_only": true
   },
   "batch_info": {
-    "batch1_results": 7,
+    "batch1_results": 8,
     "batch2_results": 201
   },
   "results": [
+    {
+      "facility_id": "657",
+      "facility_name": "Orchard Hill Loop (sites 26-59)",
+      "recreation_area": "Samuel P. Taylor SP",
+      "campsite_site_name": "Group Campsite #MG3",
+      "booking_date": "2026-04-10",
+      "booking_url": "https://www.reservecalifornia.com/park/705/657",
+      "miles": 30
+    },
     {
       "facility_id": "2061",
       "facility_name": "Bodega Dunes",
@@ -21,15 +30,6 @@
       "booking_date": "2026-04-10",
       "booking_url": "https://www.reservecalifornia.com/park/718/2061",
       "miles": 70
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W31",
-      "booking_date": "2026-05-08",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
     },
     {
       "facility_id": "649",
@@ -45,7 +45,7 @@
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
       "campsite_site_name": "Campsite #W31",
-      "booking_date": "2026-06-12",
+      "booking_date": "2026-05-08",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
     },
@@ -72,9 +72,45 @@
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
       "campsite_site_name": "Campsite #W31",
+      "booking_date": "2026-06-12",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W31",
       "booking_date": "2026-07-03",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
+    },
+    {
+      "facility_id": "629",
+      "facility_name": "Portola Campground (sites 5-19, 46-53)",
+      "recreation_area": "Portola Redwoods SP",
+      "campsite_site_name": "Tent Campsite #47",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/695/629",
+      "miles": 50
+    },
+    {
+      "facility_id": "629",
+      "facility_name": "Portola Campground (sites 5-19, 46-53)",
+      "recreation_area": "Portola Redwoods SP",
+      "campsite_site_name": "Tent Campsite #49",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/695/629",
+      "miles": 50
+    },
+    {
+      "facility_id": "629",
+      "facility_name": "Portola Campground (sites 5-19, 46-53)",
+      "recreation_area": "Portola Redwoods SP",
+      "campsite_site_name": "Tent Campsite #17",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/695/629",
+      "miles": 50
     },
     {
       "facility_id": "629",
@@ -90,33 +126,6 @@
       "facility_name": "Portola Campground (sites 5-19, 46-53)",
       "recreation_area": "Portola Redwoods SP",
       "campsite_site_name": "Tent Campsite #18",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/695/629",
-      "miles": 50
-    },
-    {
-      "facility_id": "629",
-      "facility_name": "Portola Campground (sites 5-19, 46-53)",
-      "recreation_area": "Portola Redwoods SP",
-      "campsite_site_name": "Tent Campsite #47",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/695/629",
-      "miles": 50
-    },
-    {
-      "facility_id": "629",
-      "facility_name": "Portola Campground (sites 5-19, 46-53)",
-      "recreation_area": "Portola Redwoods SP",
-      "campsite_site_name": "Tent Campsite #5",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/695/629",
-      "miles": 50
-    },
-    {
-      "facility_id": "629",
-      "facility_name": "Portola Campground (sites 5-19, 46-53)",
-      "recreation_area": "Portola Redwoods SP",
-      "campsite_site_name": "Tent Campsite #49",
       "booking_date": "2026-09-18",
       "booking_url": "https://www.reservecalifornia.com/park/695/629",
       "miles": 50
@@ -143,7 +152,7 @@
       "facility_id": "629",
       "facility_name": "Portola Campground (sites 5-19, 46-53)",
       "recreation_area": "Portola Redwoods SP",
-      "campsite_site_name": "Tent Campsite #17",
+      "campsite_site_name": "Tent Campsite #5",
       "booking_date": "2026-09-18",
       "booking_url": "https://www.reservecalifornia.com/park/695/629",
       "miles": 50
@@ -180,7 +189,7 @@
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
       "campsite_site_name": "Campsite #W31",
-      "booking_date": "2026-07-17",
+      "booking_date": "2026-07-03",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
     },
@@ -198,340 +207,7 @@
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
       "campsite_site_name": "Campsite #W31",
-      "booking_date": "2026-07-03",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W58",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W52",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W90",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W74",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W71",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W34",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W35",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W44",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W68",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W84",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W81",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W101",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W103",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W61",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W86",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W64",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W63",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W80",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W54",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W54",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W45",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W45",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W57",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W55",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W70",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W77",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W93",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W100",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W97",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W58",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W84",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W64",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W60",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W105",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W43",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W90",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W61",
-      "booking_date": "2026-08-14",
+      "booking_date": "2026-07-17",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
     },
@@ -575,7 +251,7 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W101",
+      "campsite_site_name": "Campsite #W106",
       "booking_date": "2026-08-14",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
@@ -584,7 +260,7 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W93",
+      "campsite_site_name": "Campsite #W72",
       "booking_date": "2026-08-07",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
@@ -593,17 +269,8 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W33",
+      "campsite_site_name": "Campsite #W68",
       "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W46",
-      "booking_date": "2026-08-07",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
     },
@@ -611,7 +278,34 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W100",
+      "campsite_site_name": "Campsite #W103",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W71",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W35",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W81",
       "booking_date": "2026-08-14",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
@@ -621,15 +315,6 @@
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
       "campsite_site_name": "Campsite #W55",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W38",
       "booking_date": "2026-08-14",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
@@ -638,7 +323,187 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W94",
+      "campsite_site_name": "Campsite #W77",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W108",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W85",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W65",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W47",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W89",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W84",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W103",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W43",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W54",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W58",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W44",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W86",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W74",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W84",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W45",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W61",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W58",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W63",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W81",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W101",
       "booking_date": "2026-08-14",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
@@ -653,10 +518,19 @@
       "miles": 100
     },
     {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W55",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W97",
+      "campsite_site_name": "Campsite #W93",
       "booking_date": "2026-08-07",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
@@ -665,7 +539,7 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W78",
+      "campsite_site_name": "Campsite #W90",
       "booking_date": "2026-08-14",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
@@ -674,8 +548,8 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W91",
-      "booking_date": "2026-08-07",
+      "campsite_site_name": "Campsite #W71",
+      "booking_date": "2026-08-14",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
     },
@@ -683,7 +557,7 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W34",
+      "campsite_site_name": "Campsite #W43",
       "booking_date": "2026-08-07",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
@@ -692,17 +566,8 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W48",
+      "campsite_site_name": "Campsite #W57",
       "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W36",
-      "booking_date": "2026-08-14",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
     },
@@ -719,7 +584,7 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W31",
+      "campsite_site_name": "Campsite #W61",
       "booking_date": "2026-08-14",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
@@ -728,45 +593,9 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W65",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W106",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W42",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W50",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W103",
+      "campsite_site_name": "Campsite #W48",
       "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
     },
     {
@@ -782,16 +611,7 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W96",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W71",
+      "campsite_site_name": "Campsite #W91",
       "booking_date": "2026-08-07",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
@@ -800,7 +620,7 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W85",
+      "campsite_site_name": "Campsite #W93",
       "booking_date": "2026-08-14",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
@@ -809,9 +629,81 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W108",
+      "campsite_site_name": "Campsite #W105",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W97",
       "booking_date": "2026-08-07",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W34",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W32",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W80",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W97",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W52",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W94",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W64",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
     },
     {
@@ -824,10 +716,172 @@
       "miles": 100
     },
     {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W42",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W53",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W100",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W50",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W52",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
       "campsite_site_name": "Campsite #W95",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W105",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W64",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W31",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W31",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W36",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W96",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W33",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W78",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W90",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W60",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W45",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W70",
+      "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W100",
       "booking_date": "2026-08-14",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
@@ -845,8 +899,26 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W52",
+      "campsite_site_name": "Campsite #W46",
+      "booking_date": "2026-08-07",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W38",
       "booking_date": "2026-08-14",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W34",
+      "booking_date": "2026-08-07",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
     },
@@ -854,7 +926,7 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W81",
+      "campsite_site_name": "Campsite #W101",
       "booking_date": "2026-08-07",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
@@ -863,7 +935,7 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W47",
+      "campsite_site_name": "Campsite #W54",
       "booking_date": "2026-08-14",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
@@ -873,475 +945,7 @@
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
       "campsite_site_name": "Campsite #W42",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W43",
       "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W32",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W89",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W31",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W105",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W53",
-      "booking_date": "2026-08-14",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W72",
-      "booking_date": "2026-08-07",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W108",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W53",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W46",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W43",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W83",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W33",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W37",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W57",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W85",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W87",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W71",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W32",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W97",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W68",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W84",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W39",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W53",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W99",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W80",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W94",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W103",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W81",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W67",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W41",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W67",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W83",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W64",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W70",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W96",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W101",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W74",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W38",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W100",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W57",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W87",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W58",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W61",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W93",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W39",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W54",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W60",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W31",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W36",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W97",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W38",
-      "booking_date": "2026-09-11",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
     },
@@ -1358,7 +962,7 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W105",
+      "campsite_site_name": "Campsite #W95",
       "booking_date": "2026-09-18",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
@@ -1367,7 +971,25 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W34",
+      "campsite_site_name": "Campsite #W55",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W33",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W31",
       "booking_date": "2026-09-11",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
@@ -1376,8 +998,8 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W100",
-      "booking_date": "2026-09-18",
+      "campsite_site_name": "Campsite #W81",
+      "booking_date": "2026-09-11",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
     },
@@ -1387,6 +1009,96 @@
       "recreation_area": "Salt Point SP",
       "campsite_site_name": "Campsite #W86",
       "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W80",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W70",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W38",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W75",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W89",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W83",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W103",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W47",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W107",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W100",
+      "booking_date": "2026-09-18",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
     },
@@ -1403,8 +1115,8 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W42",
-      "booking_date": "2026-09-18",
+      "campsite_site_name": "Campsite #W65",
+      "booking_date": "2026-09-11",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
     },
@@ -1421,34 +1133,7 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W55",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W103",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W90",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W52",
+      "campsite_site_name": "Campsite #W39",
       "booking_date": "2026-09-11",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
@@ -1457,81 +1142,9 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W81",
+      "campsite_site_name": "Campsite #W85",
       "booking_date": "2026-09-11",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W95",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W78",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W71",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W34",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W31",
-      "booking_date": "2026-09-04",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W105",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W64",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W60",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
     },
     {
@@ -1539,15 +1152,6 @@
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
       "campsite_site_name": "Campsite #W74",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W107",
       "booking_date": "2026-09-11",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
@@ -1556,52 +1160,16 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W45",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W35",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W70",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W54",
+      "campsite_site_name": "Campsite #W60",
       "booking_date": "2026-09-11",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
     },
     {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W95",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W36",
+      "campsite_site_name": "Campsite #W64",
       "booking_date": "2026-09-18",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
@@ -1610,7 +1178,16 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W78",
+      "campsite_site_name": "Campsite #W106",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W108",
       "booking_date": "2026-09-11",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
@@ -1628,8 +1205,152 @@
       "facility_id": "614",
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W99",
+      "campsite_site_name": "Campsite #W100",
       "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W57",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W68",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W67",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W39",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W58",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W51",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W96",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W87",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W43",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W83",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W52",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W97",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W105",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W71",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W42",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W99",
+      "booking_date": "2026-09-18",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
     },
@@ -1643,12 +1364,111 @@
       "miles": 100
     },
     {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W97",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W95",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W94",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W84",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W31",
+      "campsite_site_name": "Campsite #W53",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W78",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W36",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W90",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W76",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W103",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W67",
       "booking_date": "2026-09-18",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W88",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
     },
     {
@@ -1664,61 +1484,25 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W44",
+      "campsite_site_name": "Campsite #W46",
       "booking_date": "2026-09-18",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W106",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
     },
     {
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W65",
+      "campsite_site_name": "Campsite #W32",
       "booking_date": "2026-09-18",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W85",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W75",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W91",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
     },
     {
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W51",
+      "campsite_site_name": "Campsite #W54",
       "booking_date": "2026-09-11",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
@@ -1727,8 +1511,35 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W61",
+      "campsite_site_name": "Campsite #W54",
       "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W101",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W31",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W45",
+      "booking_date": "2026-09-11",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
     },
@@ -1745,36 +1556,9 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W58",
+      "campsite_site_name": "Campsite #W65",
       "booking_date": "2026-09-18",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W63",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W96",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W89",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
     },
     {
@@ -1790,7 +1574,25 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W45",
+      "campsite_site_name": "Campsite #W61",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W60",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W38",
       "booking_date": "2026-09-11",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
@@ -1808,9 +1610,27 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W65",
-      "booking_date": "2026-09-11",
+      "campsite_site_name": "Campsite #W35",
+      "booking_date": "2026-09-18",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W44",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W71",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
       "miles": 100
     },
     {
@@ -1826,43 +1646,7 @@
       "facility_id": "649",
       "facility_name": "Woodside Lower Loop (sites 31-70)",
       "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W55",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W76",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "614",
-      "facility_name": "Woodside Upper Loop (sites 71-109)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W88",
-      "booking_date": "2026-09-11",
-      "booking_url": "https://www.reservecalifornia.com/park/703/614",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W47",
-      "booking_date": "2026-09-18",
-      "booking_url": "https://www.reservecalifornia.com/park/703/649",
-      "miles": 100
-    },
-    {
-      "facility_id": "649",
-      "facility_name": "Woodside Lower Loop (sites 31-70)",
-      "recreation_area": "Salt Point SP",
-      "campsite_site_name": "Campsite #W41",
+      "campsite_site_name": "Campsite #W34",
       "booking_date": "2026-09-18",
       "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
@@ -1881,8 +1665,233 @@
       "facility_name": "Woodside Upper Loop (sites 71-109)",
       "recreation_area": "Salt Point SP",
       "campsite_site_name": "Campsite #W89",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W70",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W99",
       "booking_date": "2026-09-11",
       "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W55",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W78",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W64",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W61",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W85",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W105",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W34",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W91",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W93",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W58",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W36",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W41",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W53",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W41",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W63",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W45",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W96",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W31",
+      "booking_date": "2026-09-04",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W87",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W74",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W57",
+      "booking_date": "2026-09-11",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
+      "miles": 100
+    },
+    {
+      "facility_id": "614",
+      "facility_name": "Woodside Upper Loop (sites 71-109)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W81",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/614",
+      "miles": 100
+    },
+    {
+      "facility_id": "649",
+      "facility_name": "Woodside Lower Loop (sites 31-70)",
+      "recreation_area": "Salt Point SP",
+      "campsite_site_name": "Campsite #W37",
+      "booking_date": "2026-09-18",
+      "booking_url": "https://www.reservecalifornia.com/park/703/649",
       "miles": 100
     }
   ]
